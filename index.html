@@ -4,10 +4,93 @@
 <html>
   <head>
     <title>Zombicide Black Plague Spawner</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js/util.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/decks.js"></script>
+    <script src="js/logic.js"></script>
+
+    <script>
+      function setButtonClick(){
+        
+      }
+
+      function spawnButtonClick(){
+        
+      }
+    </script>
   </head>
   
   <body>
-    <h1>Zombicide Black Plague Spawner</h1>
-    <p><i>Work in progress.</i></p>
+    <div>
+      <h1>Zombicide Black Plague Spawner</h1>
+      <p><i>Work in progress.</i></p>
+      <div id="divSetGame">
+        <div>
+          <label>Base number of survivors
+            <select id="selectBaseNumberOfSurvivors">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6" selected>6</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          <label>Actual number of survivors
+            <select id="selectActualNumberOfSurvivors">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6" selected>6</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          Zombie decks to use
+          <label>
+            <input type="checkbox" id="checkboxZombieDeckBlackPlague" checked> Black Plague
+          </label>
+        </div>
+        <div>
+          <input type="button" value="Set" onclick="setButtonClick()">
+        </div>
+      </div>
+      <br>
+      <div id="divSetSpawn">
+        <div>
+          Danger level
+          <label><input type="radio" name="radioDangerLevel" value="blue" checked>Blue</label>
+          <label><input type="radio" name="radioDangerLevel" value="yellow">Yellow</label>
+          <label><input type="radio" name="radioDangerLevel" value="orange">Orange</label>
+          <label><input type="radio" name="radioDangerLevel" value="red">Red</label>
+        </div>
+        <div>
+          <label>Number of spawn zones
+            <select id="selectNumberOfspawnZones">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          <input type="button" value="Spawn" onclick="spawnButtonClick()">
+        </div>
+      </div>
+      <br>
+      <div id="divSpawnResult">
+        <div id="divSpawnZoneTemplate">
+          <!-- ToDo: Show spawned zombie cards here! -->
+        </div>
+      </div>
+    </div>
   </body>
-</html> 
+</html>
