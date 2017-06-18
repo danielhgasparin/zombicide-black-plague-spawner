@@ -7,7 +7,7 @@ var ZombieDeckEnum = Object.freeze({
 
 var blackPlagueZombieDeck = [
     new ZombieCard(
-        1,
+        "01",
         SpawnTypeEnum.normalSpawn,
         null,
         new Spawn(ZombieTypeEnum.runner, 2),
@@ -15,7 +15,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.fatty, 2)
     ),
     new ZombieCard(
-        2,
+        "02",
         SpawnTypeEnum.normalSpawn,
         null,
         new Spawn(ZombieTypeEnum.fatty, 2),
@@ -23,7 +23,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 5)
     ),
     new ZombieCard(
-        3,
+        "03",
         SpawnTypeEnum.normalSpawn,
         null,
         new Spawn(ZombieTypeEnum.walker, 4),
@@ -31,7 +31,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.runner, 2)
     ),
     new ZombieCard(
-        4,
+        "04",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 1),
         new Spawn(ZombieTypeEnum.runner, 1),
@@ -39,7 +39,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.fatty, 3)
     ),
     new ZombieCard(
-        5,
+        "05",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 1),
         new Spawn(ZombieTypeEnum.fatty, 1),
@@ -47,7 +47,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 5)
     ),
     new ZombieCard(
-        6,
+        "06",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 1),
         new Spawn(ZombieTypeEnum.walker, 2),
@@ -55,7 +55,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.runner, 3)
     ),
     new ZombieCard(
-        7,
+        "07",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 2),
         new Spawn(ZombieTypeEnum.runner, 1),
@@ -63,7 +63,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.fatty, 3)
     ),
     new ZombieCard(
-        8,
+        "08",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 3),
         new Spawn(ZombieTypeEnum.fatty, 1),
@@ -71,7 +71,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 6)
     ),
     new ZombieCard(
-        9,
+        "09",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.fatty, 1),
         new Spawn(ZombieTypeEnum.walker, 2),
@@ -79,7 +79,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.runner, 3)
     ),
     new ZombieCard(
-        10,
+        "10",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.fatty, 1),
         new Spawn(ZombieTypeEnum.walker, 2),
@@ -87,7 +87,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 5)
     ),
     new ZombieCard(
-        11,
+        "11",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.runner, 1),
         new Spawn(ZombieTypeEnum.walker, 3),
@@ -95,7 +95,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 6)
     ),
     new ZombieCard(
-        12,
+        "12",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.runner, 1),
         new Spawn(ZombieTypeEnum.walker, 3),
@@ -103,7 +103,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 5)
     ),
     new ZombieCard(
-        13,
+        "13",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.abomination, 1),
         new Spawn(ZombieTypeEnum.runner, 1),
@@ -111,7 +111,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.fatty, 2)
     ),
     new ZombieCard(
-        14,
+        "14",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 2),
         new Spawn(ZombieTypeEnum.abomination, 1),
@@ -119,7 +119,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.runner, 3)
     ),
     new ZombieCard(
-        15,
+        "15",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 2),
         new Spawn(ZombieTypeEnum.fatty, 1),
@@ -127,7 +127,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 6)
     ),
     new ZombieCard(
-        16,
+        "16",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 1),
         new Spawn(ZombieTypeEnum.walker, 3),
@@ -135,7 +135,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.abomination, 1)
     ),
     new ZombieCard(
-        17,
+        "17",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 1),
         new Spawn(ZombieTypeEnum.runner, 2),
@@ -143,7 +143,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 6)
     ),
     new ZombieCard(
-        18,
+        "18",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.runner, 1),
         new Spawn(ZombieTypeEnum.fatty, 1),
@@ -151,7 +151,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 5)
     ),
     new ZombieCard(
-        19,
+        "19",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 1),
         new Spawn(ZombieTypeEnum.walker, 4),
@@ -159,7 +159,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.fatty, 3)
     ),
     new ZombieCard(
-        20,
+        "20",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.fatty, 1),
         new Spawn(ZombieTypeEnum.runner, 1),
@@ -167,7 +167,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.runner, 2)
     ),
     new ZombieCard(
-        21,
+        "21",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 1),
         new Spawn(ZombieTypeEnum.fatty, 2),
@@ -175,7 +175,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 8)
     ),
     new ZombieCard(
-        22,
+        "22",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.fatty, 1),
         new Spawn(ZombieTypeEnum.walker, 2),
@@ -183,7 +183,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 7)
     ),
     new ZombieCard(
-        23,
+        "23",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.runner, 1),
         new Spawn(ZombieTypeEnum.walker, 4),
@@ -191,7 +191,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.fatty, 3)
     ),
     new ZombieCard(
-        24,
+        "24",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.fatty, 1),
         new Spawn(ZombieTypeEnum.walker, 3),
@@ -199,7 +199,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.runner, 3)
     ),
     new ZombieCard(
-        25,
+        "25",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.abomination, 1),
         new Spawn(ZombieTypeEnum.runner, 1),
@@ -207,7 +207,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.fatty, 2)
     ),
     new ZombieCard(
-        26,
+        "26",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 2),
         new Spawn(ZombieTypeEnum.abomination, 1),
@@ -215,7 +215,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.runner, 3)
     ),
     new ZombieCard(
-        27,
+        "27",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 2),
         new Spawn(ZombieTypeEnum.fatty, 1),
@@ -223,7 +223,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 6)
     ),
     new ZombieCard(
-        28,
+        "28",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 1),
         new Spawn(ZombieTypeEnum.walker, 3),
@@ -231,7 +231,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.abomination, 1)
     ),
     new ZombieCard(
-        29,
+        "29",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 1),
         new Spawn(ZombieTypeEnum.runner, 2),
@@ -239,7 +239,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 6)
     ),
     new ZombieCard(
-        30,
+        "30",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.runner, 1),
         new Spawn(ZombieTypeEnum.fatty, 1),
@@ -247,7 +247,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 5)
     ),
     new ZombieCard(
-        31,
+        "31",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 1),
         new Spawn(ZombieTypeEnum.walker, 4),
@@ -255,7 +255,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.fatty, 3)
     ),
     new ZombieCard(
-        32,
+        "32",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.fatty, 1),
         new Spawn(ZombieTypeEnum.runner, 1),
@@ -263,7 +263,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.runner, 2)
     ),
     new ZombieCard(
-        33,
+        "33",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.walker, 1),
         new Spawn(ZombieTypeEnum.fatty, 2),
@@ -271,7 +271,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 8)
     ),
     new ZombieCard(
-        34,
+        "34",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.fatty, 1),
         new Spawn(ZombieTypeEnum.walker, 2),
@@ -279,7 +279,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker, 7)
     ),
     new ZombieCard(
-        35,
+        "35",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.runner, 1),
         new Spawn(ZombieTypeEnum.walker, 4),
@@ -287,7 +287,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.fatty, 3)
     ),
     new ZombieCard(
-        36,
+        "36",
         SpawnTypeEnum.normalSpawn,
         new Spawn(ZombieTypeEnum.fatty, 1),
         new Spawn(ZombieTypeEnum.walker, 3),
@@ -295,7 +295,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.runner, 3)
     ),
     new ZombieCard(
-        37,
+        "37",
         SpawnTypeEnum.extraActivation,
         null,
         new Spawn(ZombieTypeEnum.walker),
@@ -303,7 +303,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker)
     ),
     new ZombieCard(
-        38,
+        "38",
         SpawnTypeEnum.extraActivation,
         null,
         new Spawn(ZombieTypeEnum.walker),
@@ -311,7 +311,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.walker)
     ),
     new ZombieCard(
-        39,
+        "39",
         SpawnTypeEnum.extraActivation,
         null,
         new Spawn(ZombieTypeEnum.fatty),
@@ -319,7 +319,7 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.fatty)
     ),
     new ZombieCard(
-        40,
+        "40",
         SpawnTypeEnum.extraActivation,
         null,
         new Spawn(ZombieTypeEnum.runner),
@@ -327,59 +327,59 @@ var blackPlagueZombieDeck = [
         new Spawn(ZombieTypeEnum.runner)
     ),
     new ZombieCard(
-        41,
+        "41",
         SpawnTypeEnum.necromancerSpawn
     ),
     new ZombieCard(
-        42,
+        "42",
         SpawnTypeEnum.necromancerSpawn
     ),
     new ZombieCard(
-        43,
+        "43",
         SpawnTypeEnum.necromancerSpawn
     ),
     new ZombieCard(
-        44,
+        "44",
         SpawnTypeEnum.necromancerSpawn
     ),
     new ZombieCard(
-        45,
+        "45",
         SpawnTypeEnum.necromancerSpawn
     ),
     new ZombieCard(
-        46,
+        "46",
         SpawnTypeEnum.necromancerSpawn
     ),
     new ZombieCard(
-        47,
+        "47",
         SpawnTypeEnum.doubleSpawn
     ),
     new ZombieCard(
-        48,
+        "48",
         SpawnTypeEnum.doubleSpawn
     ),
     new ZombieCard(
-        49,
+        "49",
         SpawnTypeEnum.doubleSpawn
     ),
     new ZombieCard(
-        50,
+        "50",
         SpawnTypeEnum.doubleSpawn
     ),
     new ZombieCard(
-        51,
+        "51",
         SpawnTypeEnum.doubleSpawn
     ),
     new ZombieCard(
-        52,
+        "52",
         SpawnTypeEnum.doubleSpawn
     ),
     new ZombieCard(
-        53,
+        "53",
         SpawnTypeEnum.doubleSpawn
     ),
     new ZombieCard(
-        54,
+        "54",
         SpawnTypeEnum.doubleSpawn
     )
 ]

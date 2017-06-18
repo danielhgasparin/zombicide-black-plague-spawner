@@ -14,13 +14,12 @@ function setGame(baseNumberOfSurvivorsToUse, actualNumberOfSurvivorsToUse, useBl
 }
 
 function spawnZombies(numberOfSpawnZones){
-    var spawnZones = [];
-    var spawnZoneIndex = 0;
-    var remainingSpawns = numberOfSpawnZones;
-    var extraSpawns = 0;
-    var nextExtraSpawns = 0;
-    
-    for(var i = 0; i < numberOfSpawnZones; i++){
+    let spawnZones = [];
+    let spawnZoneIndex = 0;
+    let remainingSpawns = numberOfSpawnZones;
+    let extraSpawns = 0;
+    let nextExtraSpawns = 0;
+    for(let i = 0; i < numberOfSpawnZones; i++){
         if(checkSpawnZoneForBalance()){
             spawnZones[i] = [];
         }else{
@@ -28,14 +27,11 @@ function spawnZombies(numberOfSpawnZones){
             remainingSpawns--;
         }
     }
-    
     while(remainingSpawns > 0){
         if(spawnZones[spawnZoneIndex] != null){
             remainingSpawns--;
-            
-            var card = drawZombieCard();
-            spawnZone[spawnZoneIndex].push(card);
-
+            let card = drawZombieCard();
+            spawnZones[spawnZoneIndex].push(card);
             switch(card.spawnType){
                 case SpawnTypeEnum.doubleSpawn:
                     remainingSpawns++;
@@ -46,14 +42,12 @@ function spawnZombies(numberOfSpawnZones){
                     extraSpawns++;
                     break;
             }
-
             if(extraSpawns > 0){
                 //stay in the same spawn zone
                 extraSpawns--;
             }else{
                 //move to next spawn zone
                 spawnZoneIndex = getNextSpawnZoneIndex(spawnZoneIndex, numberOfSpawnZones);
-                
                 extraSpawns = nextExtraSpawns;
                 nextExtraSpawns = 0;
             }
@@ -61,25 +55,40 @@ function spawnZombies(numberOfSpawnZones){
             spawnZoneIndex = getNextSpawnZoneIndex(spawnZoneIndex, numberOfSpawnZones);
         }
     }
-    
     return spawnZones;
 }
 
+function getSpawnFromCard(card, dangerLevel){
+    let spawn;
+    switch(dangerLevel){
+        case DangerLevelEnum.blue:
+            spawn = card.blueLevel;
+            break;
+        case DangerLevelEnum.yellow:
+            spawn = card.yellowLevel;
+            break;
+        case DangerLevelEnum.orange:
+            spawn = card.orangeLevel;
+            break;
+        case DangerLevelEnum.red:
+            spawn = card.redLevel;
+            break;
+    }
+    return spawn;
+}
+
 function checkSpawnZoneForBalance(){
+    let useSpawnZone = true;
     if(actualNumberOfSurvivors < baseNumberOfSurvivors){
         if(spawnZonesToUseForBalance.length == 0){
-            for(var i = 0; i < baseNumberOfSurvivors; i++){
+            for(let i = 0; i < baseNumberOfSurvivors; i++){
                 spawnZonesToUseForBalance[i] = i < actualNumberOfSurvivors;
             }
         }
-        
-        var i = getRandomInt(0, baseNumberOfSurvivors.length - 1);
-        var use = spawnZonesToUseForBalance.splice(i, 1)[0];
-
-        return use;
-    }else{
-        return true;
+        let i = getRandomInt(0, baseNumberOfSurvivors.length - 1);
+        useSpawnZone = spawnZonesToUseForBalance.splice(i, 1)[0];
     }
+    return useSpawnZone;
 }
 
 function getNextSpawnZoneIndex(currentIndex, length){
@@ -90,10 +99,8 @@ function drawZombieCard(){
     if(zombieDeck.length == 0){
         buildZombieDeck();
     }
-
-    var i = getRandomInt(0, zombieDeck.length - 1);
-    var card = zombieDeck.splice(i, 1)[0];
-    
+    let i = getRandomInt(0, zombieDeck.length - 1);
+    let card = zombieDeck.splice(i, 1)[0];
     return card;
 }
 
