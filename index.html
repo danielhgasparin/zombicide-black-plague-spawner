@@ -1,8 +1,9 @@
-
 <!DOCTYPE html>
 
 <html>
+
   <head>
+    <meta charset="utf-8"/>
     <title>Zombicide Black Plague Spawner</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="js/util.js"></script>
@@ -12,15 +13,99 @@
 
     <script>
       function setButtonClick(){
-        
+        setGame($("#selectBaseNumberOfSurvivors").val(), $("#selectActualNumberOfSurvivors").val(), $("#checkboxZombieDeckBlackPlague").is(':checked'));
+        $("#selectBaseNumberOfSurvivors").prop('disabled', true);
+        $("#selectActualNumberOfSurvivors").prop('disabled', true);
+        $("#checkboxZombieDeckBlackPlague").prop('disabled', true);
+        $("#buttonSet").hide();
+        $("#divSpawn").show();
       }
 
       function spawnButtonClick(){
-        
+        $("#divSpawnPlaceholder").empty();
+        let numberOfSpawnZones = $("#selectNumberOfspawnZones").val();
+        let dangerLevel = parseInt($('input[name=radioDangerLevel]:checked').val());
+        let spawnZones = spawnZombies(numberOfSpawnZones);
+        for(let i = 0; i < spawnZones.length; i++){
+          let spawnZone = spawnZones[i];
+          let divSpawnZone = $("<div>", {class: ""}).html(writeSpawnZoneHtml(i + 1));
+          $("#divSpawnPlaceholder").append(divSpawnZone, "<br>");
+          if(spawnZone != null){
+            for(let card of spawnZone){
+              let divSpawn = $("<div>", {class: ""}).html(writeSpawnHtml(card, dangerLevel));
+              divSpawn.appendTo(divSpawnZone);
+            }
+          }else{
+            let divSpawn = $("<div>", {class: ""}).html(writeSpawnHtml(null, null));
+            divSpawn.appendTo(divSpawnZone);
+          }
+        }
+      }
+
+      function writeSpawnZoneHtml(spawnZoneNumber){
+        return "<u>---Spawn Zone " + spawnZoneNumber + "---</u>";
+      }
+
+      function writeSpawnHtml(card, dangerLevel){
+        let html;
+        if(card != null){
+          let spawn = getSpawnFromCard(card, dangerLevel);
+          html = card.number + ": ";
+          switch(card.spawnType){
+            case SpawnTypeEnum.normalSpawn:
+                if(spawn != null){
+                  switch(spawn.zombieType){
+                    case ZombieTypeEnum.walker:
+                      html += "Walker";
+                      break;
+                    case ZombieTypeEnum.fatty:
+                      html += "Fatty";
+                      break;
+                    case ZombieTypeEnum.runner:
+                      html += "Runner";
+                      break;
+                    case ZombieTypeEnum.abomination:
+                      html += "Abomination";
+                      break;
+                  }
+                  html += " x " + spawn.quantity;
+                }else{
+                  html += "Nothing";
+                }
+                break;
+            case SpawnTypeEnum.extraActivation:
+                html += "Extra activation - ";
+                if(spawn != null){
+                  switch(spawn.zombieType){
+                    case ZombieTypeEnum.walker:
+                      html += "All Walkers";
+                      break;
+                    case ZombieTypeEnum.fatty:
+                      html += "All Fatties";
+                      break;
+                    case ZombieTypeEnum.runner:
+                      html += "All Runners";
+                      break;
+                  }
+                }else{
+                  html += "No one";
+                }
+                break;
+            case SpawnTypeEnum.doubleSpawn:
+                html += "Double spawn";
+                break;
+            case SpawnTypeEnum.necromancerSpawn:
+                html += "Necromancer";
+                break;
+          }
+        }else{
+          html = "<i>skipped for balance with fewer survivors</i>";
+        }
+        return html;
       }
     </script>
   </head>
-  
+
   <body>
     <div>
       <h1>Zombicide Black Plague Spawner</h1>
@@ -57,17 +142,17 @@
           </label>
         </div>
         <div>
-          <input type="button" value="Set" onclick="setButtonClick()">
+          <input type="button" id="buttonSet" value="Set" onclick="setButtonClick()">
         </div>
       </div>
       <br>
-      <div id="divSetSpawn">
+      <div id="divSpawn" style="display: none">
         <div>
           Danger level
-          <label><input type="radio" name="radioDangerLevel" value="blue" checked>Blue</label>
-          <label><input type="radio" name="radioDangerLevel" value="yellow">Yellow</label>
-          <label><input type="radio" name="radioDangerLevel" value="orange">Orange</label>
-          <label><input type="radio" name="radioDangerLevel" value="red">Red</label>
+          <label><input type="radio" name="radioDangerLevel" value="1" checked>Blue</label>
+          <label><input type="radio" name="radioDangerLevel" value="2">Yellow</label>
+          <label><input type="radio" name="radioDangerLevel" value="3">Orange</label>
+          <label><input type="radio" name="radioDangerLevel" value="4">Red</label>
         </div>
         <div>
           <label>Number of spawn zones
@@ -84,13 +169,10 @@
         <div>
           <input type="button" value="Spawn" onclick="spawnButtonClick()">
         </div>
-      </div>
-      <br>
-      <div id="divSpawnResult">
-        <div id="divSpawnZoneTemplate">
-          <!-- ToDo: Show spawned zombie cards here! -->
-        </div>
+        <br>
+        <div id="divSpawnPlaceholder"></div>
       </div>
     </div>
   </body>
+  
 </html>
