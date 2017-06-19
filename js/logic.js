@@ -48,8 +48,14 @@ function spawnZombies(numberOfSpawnZones){
             }else{
                 //move to next spawn zone
                 spawnZoneIndex = getNextSpawnZoneIndex(spawnZoneIndex, numberOfSpawnZones);
-                extraSpawns = nextExtraSpawns;
-                nextExtraSpawns = 0;
+                if(nextExtraSpawns > 0){
+                    //mark an extra spawn next zone (to spawn twice) if there are still remaining spawns beyond the extra spawn itself
+                    //in case the last zone was already reached, only one spawn (the extra spawn) will take place in first zone again
+                    if(remainingSpawns > 1){
+                        extraSpawns = nextExtraSpawns;
+                    }
+                    nextExtraSpawns = 0;
+                }
             }
         }else{
             spawnZoneIndex = getNextSpawnZoneIndex(spawnZoneIndex, numberOfSpawnZones);
