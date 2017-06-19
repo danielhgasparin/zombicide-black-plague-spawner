@@ -31,31 +31,35 @@ function spawnZombies(numberOfSpawnZones){
         if(spawnZones[spawnZoneIndex] != null){
             remainingSpawns--;
             let card = drawZombieCard();
-            spawnZones[spawnZoneIndex].push(card);
-            switch(card.spawnType){
-                case SpawnTypeEnum.doubleSpawn:
-                    remainingSpawns++;
-                    nextExtraSpawns++;
-                    break;
-                case SpawnTypeEnum.necromancerSpawn:
-                    remainingSpawns++;
-                    extraSpawns++;
-                    break;
-            }
-            if(extraSpawns > 0){
-                //stay in the same spawn zone
-                extraSpawns--;
-            }else{
-                //move to next spawn zone
-                spawnZoneIndex = getNextSpawnZoneIndex(spawnZoneIndex, numberOfSpawnZones);
-                if(nextExtraSpawns > 0){
-                    //mark an extra spawn next zone (to spawn twice) if there are still remaining spawns beyond the extra spawn itself
-                    //in case the last zone was already reached, only one spawn (the extra spawn) will take place in first zone again
-                    if(remainingSpawns > 1){
-                        extraSpawns = nextExtraSpawns;
-                    }
-                    nextExtraSpawns = 0;
+            if(card != null){
+                spawnZones[spawnZoneIndex].push(card);
+                switch(card.spawnType){
+                    case SpawnTypeEnum.doubleSpawn:
+                        remainingSpawns++;
+                        nextExtraSpawns++;
+                        break;
+                    case SpawnTypeEnum.necromancerSpawn:
+                        remainingSpawns++;
+                        extraSpawns++;
+                        break;
                 }
+                if(extraSpawns > 0){
+                    //stay in the same spawn zone
+                    extraSpawns--;
+                }else{
+                    //move to next spawn zone
+                    spawnZoneIndex = getNextSpawnZoneIndex(spawnZoneIndex, numberOfSpawnZones);
+                    if(nextExtraSpawns > 0){
+                        //mark an extra spawn next zone (to spawn twice) if there are still remaining spawns beyond the extra spawn itself
+                        //in case the last zone was already reached, only one spawn (the extra spawn) will take place in first zone again
+                        if(remainingSpawns > 1){
+                            extraSpawns = nextExtraSpawns;
+                        }
+                        nextExtraSpawns = 0;
+                    }
+                }
+            }else{
+                break;
             }
         }else{
             spawnZoneIndex = getNextSpawnZoneIndex(spawnZoneIndex, numberOfSpawnZones);
