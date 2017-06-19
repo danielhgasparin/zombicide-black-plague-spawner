@@ -85,7 +85,7 @@ function checkSpawnZoneForBalance(){
                 spawnZonesToUseForBalance[i] = i < actualNumberOfSurvivors;
             }
         }
-        let i = getRandomInt(0, baseNumberOfSurvivors.length - 1);
+        let i = getRandomInt(0, spawnZonesToUseForBalance.length - 1);
         useSpawnZone = spawnZonesToUseForBalance.splice(i, 1)[0];
     }
     return useSpawnZone;
