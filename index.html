@@ -21,14 +21,15 @@
       }
 
       function spawnButtonClick(){
-        $("#divSpawnPlaceholder").empty();
+        let divSpawnPlaceHolder = $("#divSpawnPlaceholder");
         let numberOfSpawnZones = $("#selectNumberOfspawnZones").val();
         let dangerLevel = parseInt($('input[name=radioDangerLevel]:checked').val());
         let spawnZones = spawnZombies(numberOfSpawnZones);
+        divSpawnPlaceHolder.empty();
         for(let i = 0; i < spawnZones.length; i++){
           let spawnZone = spawnZones[i];
           let divSpawnZone = $("<div>", {class: ""}).html(writeSpawnZoneHtml(i + 1));
-          $("#divSpawnPlaceholder").append(divSpawnZone, "<br>");
+          divSpawnPlaceHolder.append(divSpawnZone, "<br>");
           if(spawnZone != null){
             for(let card of spawnZone){
               let divSpawn = $("<div>", {class: ""}).html(writeSpawnHtml(card, dangerLevel));
