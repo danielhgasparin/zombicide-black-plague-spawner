@@ -11,19 +11,33 @@
     <script src="js/decks.js"></script>
     <script src="js/logic.js"></script>
     <script>
+
       function setButtonClick(){
         setGame($("#selectBaseNumberOfSurvivors").val(), $("#selectActualNumberOfSurvivors").val(), $("#checkboxZombieDeckBlackPlague").is(':checked'));
         $("#selectBaseNumberOfSurvivors").prop('disabled', true);
         $("#selectActualNumberOfSurvivors").prop('disabled', true);
         $("#checkboxZombieDeckBlackPlague").prop('disabled', true);
         $("#buttonSet").hide();
+        $("#buttonStartNewGame").show();
+        $("#radioDangerLevelBlue").prop("checked", true)
+        $("#selectNumberOfspawnZones").val(1);
+        $("#divSpawnPlaceholder").empty();
         $("#divSpawn").show();
+      }
+
+      function startNewGameButtonClick(){
+        $("#selectBaseNumberOfSurvivors").prop('disabled', false);
+        $("#selectActualNumberOfSurvivors").prop('disabled', false);
+        $("#checkboxZombieDeckBlackPlague").prop('disabled', false);
+        $("#buttonSet").show();
+        $("#buttonStartNewGame").hide();
+        $("#divSpawn").hide();
       }
 
       function spawnButtonClick(){
         let divSpawnPlaceHolder = $("#divSpawnPlaceholder");
-        let numberOfSpawnZones = $("#selectNumberOfspawnZones").val();
         let dangerLevel = parseInt($('input[name=radioDangerLevel]:checked').val());
+        let numberOfSpawnZones = $("#selectNumberOfspawnZones").val();
         let spawnZones = spawnZombies(numberOfSpawnZones);
         divSpawnPlaceHolder.empty();
         for(let i = 0; i < spawnZones.length; i++){
@@ -103,6 +117,7 @@
         }
         return html;
       }
+
     </script>
   </head>
 
@@ -143,16 +158,17 @@
         </div>
         <div>
           <input type="button" id="buttonSet" value="Set" onclick="setButtonClick()">
+          <input type="button" id="buttonStartNewGame" value="Start new game" onclick="startNewGameButtonClick()" style="display: none">
         </div>
       </div>
       <br>
       <div id="divSpawn" style="display: none">
         <div>
           Danger level
-          <label><input type="radio" name="radioDangerLevel" value="1" checked>Blue</label>
-          <label><input type="radio" name="radioDangerLevel" value="2">Yellow</label>
-          <label><input type="radio" name="radioDangerLevel" value="3">Orange</label>
-          <label><input type="radio" name="radioDangerLevel" value="4">Red</label>
+          <label><input type="radio" id="radioDangerLevelBlue" name="radioDangerLevel" value="1">Blue</label>
+          <label><input type="radio" id="radioDangerLevelYellow" name="radioDangerLevel" value="2">Yellow</label>
+          <label><input type="radio" id="radioDangerLevelOrange" name="radioDangerLevel" value="3">Orange</label>
+          <label><input type="radio" id="radioDangerLevelRed" name="radioDangerLevel" value="4">Red</label>
         </div>
         <div>
           <label>Number of spawn zones

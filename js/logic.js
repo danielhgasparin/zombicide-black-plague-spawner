@@ -2,7 +2,7 @@ var baseNumberOfSurvivors;
 var actualNumberOfSurvivors;
 var zombieDecksToUse;
 var zombieDeck = [];
-var spawnZonesToUseForBalance = [];
+var spawnZonesToUseList = [];
 
 function setGame(baseNumberOfSurvivorsToUse, actualNumberOfSurvivorsToUse, useBlackPlagueDeck){
     baseNumberOfSurvivors = baseNumberOfSurvivorsToUse;
@@ -11,6 +11,8 @@ function setGame(baseNumberOfSurvivorsToUse, actualNumberOfSurvivorsToUse, useBl
     if(useBlackPlagueDeck){
         zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.blackPlague;
     }
+    buildZombieDeck();
+    buildSpawnZonesToUseList();
 }
 
 function spawnZombies(numberOfSpawnZones){
@@ -20,7 +22,7 @@ function spawnZombies(numberOfSpawnZones){
     let extraSpawns = 0;
     let nextExtraSpawns = 0;
     for(let i = 0; i < numberOfSpawnZones; i++){
-        if(checkSpawnZoneForBalance()){
+        if(checkSpawnZoneToUse()){
             spawnZones[i] = [];
         }else{
             spawnZones[i] = null;
@@ -66,39 +68,6 @@ function spawnZombies(numberOfSpawnZones){
     return spawnZones;
 }
 
-function getSpawnFromCard(card, dangerLevel){
-    let spawn;
-    switch(dangerLevel){
-        case DangerLevelEnum.blue:
-            spawn = card.blueLevel;
-            break;
-        case DangerLevelEnum.yellow:
-            spawn = card.yellowLevel;
-            break;
-        case DangerLevelEnum.orange:
-            spawn = card.orangeLevel;
-            break;
-        case DangerLevelEnum.red:
-            spawn = card.redLevel;
-            break;
-    }
-    return spawn;
-}
-
-function checkSpawnZoneForBalance(){
-    let useSpawnZone = true;
-    if(actualNumberOfSurvivors < baseNumberOfSurvivors){
-        if(spawnZonesToUseForBalance.length == 0){
-            for(let i = 0; i < baseNumberOfSurvivors; i++){
-                spawnZonesToUseForBalance[i] = i < actualNumberOfSurvivors;
-            }
-        }
-        let i = getRandomInt(0, spawnZonesToUseForBalance.length - 1);
-        useSpawnZone = spawnZonesToUseForBalance.splice(i, 1)[0];
-    }
-    return useSpawnZone;
-}
-
 function getNextSpawnZoneIndex(currentIndex, length){
     return (currentIndex + 1 < length) ? currentIndex + 1 : 0;
 }
@@ -117,4 +86,39 @@ function buildZombieDeck(){
     if(zombieDecksToUse & ZombieDeckEnum.blackPlague){
         Array.prototype.push.apply(zombieDeck, blackPlagueZombieDeck);
     }
+}
+
+function checkSpawnZoneToUse(){
+    if(spawnZonesToUseList.length == 0){
+        buildSpawnZonesToUseList();
+    }
+    let i = getRandomInt(0, spawnZonesToUseList.length - 1);
+    let useSpawnZone = spawnZonesToUseList.splice(i, 1)[0];
+    return useSpawnZone;
+}
+
+function buildSpawnZonesToUseList(){
+    spawnZonesToUseList = [];
+    for(let i = 0; i < baseNumberOfSurvivors; i++){
+        spawnZonesToUseList[i] = i < actualNumberOfSurvivors;
+    }
+}
+
+function getSpawnFromCard(card, dangerLevel){
+    let spawn;
+    switch(dangerLevel){
+        case DangerLevelEnum.blue:
+            spawn = card.blueLevel;
+            break;
+        case DangerLevelEnum.yellow:
+            spawn = card.yellowLevel;
+            break;
+        case DangerLevelEnum.orange:
+            spawn = card.orangeLevel;
+            break;
+        case DangerLevelEnum.red:
+            spawn = card.redLevel;
+            break;
+    }
+    return spawn;
 }
