@@ -58,8 +58,6 @@ function spawnZombies(numberOfSpawnZones){
                         nextExtraSpawns = 0;
                     }
                 }
-            }else{
-                break;
             }
         }else{
             spawnZoneIndex = getNextSpawnZoneIndex(spawnZoneIndex, numberOfSpawnZones);
