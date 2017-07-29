@@ -1,11 +1,11 @@
-var ZombieDeckEnum = Object.freeze({
+let ZombieDeckEnum = Object.freeze({
     //Bitwise enumeration
     blackPlague: 1
     //wulfsburg: 2
     //greenHorde: 4
 })
 
-var blackPlagueZombieDeck = [
+let blackPlagueZombieDeck = [
     new ZombieCard(
         "01",
         SpawnTypeEnum.normalSpawn,

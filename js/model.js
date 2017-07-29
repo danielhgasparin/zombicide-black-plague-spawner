@@ -1,18 +1,18 @@
-var ZombieTypeEnum = Object.freeze({
+let ZombieTypeEnum = Object.freeze({
     walker: 1,
     fatty: 2,
     runner: 3,
     abomination: 4
 })
 
-var SpawnTypeEnum = Object.freeze({
+let SpawnTypeEnum = Object.freeze({
     normalSpawn: 1,
     extraActivation: 2,
     doubleSpawn: 3,
     necromancerSpawn: 4
 })
 
-var DangerLevelEnum = Object.freeze({
+let DangerLevelEnum = Object.freeze({
     blue: 1,
     yellow: 2,
     orange: 3,

@@ -1,8 +1,8 @@
-var baseNumberOfSurvivors;
-var actualNumberOfSurvivors;
-var zombieDecksToUse;
-var zombieDeck = [];
-var spawnZonesToUseList = [];
+let baseNumberOfSurvivors;
+let actualNumberOfSurvivors;
+let zombieDecksToUse;
+let zombieDeck = [];
+let spawnZonesToUseList = [];
 
 function setGame(baseNumberOfSurvivorsToUse, actualNumberOfSurvivorsToUse, useBlackPlagueDeck){
     baseNumberOfSurvivors = baseNumberOfSurvivorsToUse;
