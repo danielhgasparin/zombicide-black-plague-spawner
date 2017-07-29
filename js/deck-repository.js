@@ -2,7 +2,8 @@ let ZombieDeckEnum = Object.freeze({
     //Bitwise enumeration
     blackPlague: 1
     //wulfsburg: 2
-    //greenHorde: 4
+    //murderOfCrowz: 4
+    //deadeyeWalkers: 8
 })
 
 let blackPlagueZombieDeck = [
