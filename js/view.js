@@ -1,5 +1,7 @@
 function setButtonClick(){
     setGame($("#selectBaseNumberOfSurvivors").val(), $("#selectActualNumberOfSurvivors").val(), $("#checkboxZombieDeckBlackPlague").is(':checked'));
+    $("#spanCardsCountTotal").html(zombieDeck.length);
+    $("#spanCardsCountCurrent").html(zombieDeck.length);
     $("#selectBaseNumberOfSurvivors").prop('disabled', true);
     $("#selectActualNumberOfSurvivors").prop('disabled', true);
     $("#checkboxZombieDeckBlackPlague").prop('disabled', true);
@@ -25,6 +27,7 @@ function spawnButtonClick(){
     let dangerLevel = parseInt($('input[name=radioDangerLevel]:checked').val());
     let numberOfSpawnZones = $("#selectNumberOfspawnZones").val();
     let spawnZones = spawnZombies(numberOfSpawnZones);
+    $("#spanCardsCountCurrent").html(zombieDeck.length);
     divSpawnPlaceHolder.empty();
     for(let i = 0; i < spawnZones.length; i++){
         let spawnZone = spawnZones[i];
