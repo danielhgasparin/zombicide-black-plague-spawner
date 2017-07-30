@@ -2,6 +2,7 @@ let baseNumberOfSurvivors;
 let actualNumberOfSurvivors;
 let zombieDecksToUse;
 let zombieDeck = [];
+let zombieDeckLastSnapshot = [];
 let spawnZonesToUseList = [];
 
 function setGame(baseNumberOfSurvivorsToUse, actualNumberOfSurvivorsToUse, useBlackPlagueDeck){
@@ -16,6 +17,7 @@ function setGame(baseNumberOfSurvivorsToUse, actualNumberOfSurvivorsToUse, useBl
 }
 
 function spawnZombies(numberOfSpawnZones){
+    zombieDeckLastSnapshot = zombieDeck.slice();
     let spawnZones = [];
     let spawnZoneIndex = 0;
     let remainingSpawns = numberOfSpawnZones;
@@ -66,6 +68,10 @@ function spawnZombies(numberOfSpawnZones){
         }
     }
     return spawnZones;
+}
+
+function rollbackLastSpawn(){
+    zombieDeck = zombieDeckLastSnapshot.slice();
 }
 
 function getNextSpawnZoneIndex(currentIndex, length){

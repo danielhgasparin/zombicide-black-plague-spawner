@@ -1,7 +1,6 @@
 function setButtonClick(){
     setGame($("#selectBaseNumberOfSurvivors").val(), $("#selectActualNumberOfSurvivors").val(), $("#checkboxZombieDeckBlackPlague").is(':checked'));
-    $("#spanCardsCountTotal").html(zombieDeck.length);
-    $("#spanCardsCountCurrent").html(zombieDeck.length);
+    refreshCardsCount(true);
     $("#selectBaseNumberOfSurvivors").prop('disabled', true);
     $("#selectActualNumberOfSurvivors").prop('disabled', true);
     $("#checkboxZombieDeckBlackPlague").prop('disabled', true);
@@ -29,7 +28,7 @@ function spawnButtonClick(){
     let dangerLevel = parseInt($('input[name=radioDangerLevel]:checked').val());
     let numberOfSpawnZones = $("#selectNumberOfspawnZones").val();
     let spawnZones = spawnZombies(numberOfSpawnZones);
-    $("#spanCardsCountCurrent").html(zombieDeck.length);
+    refreshCardsCount(false);
     divSpawnPlaceHolder.empty();
     for(let i = 0; i < spawnZones.length; i++){
         let spawnZone = spawnZones[i];
@@ -44,6 +43,23 @@ function spawnButtonClick(){
         let divSpawn = $("<div>", {class: ""}).html(writeSpawnHtml(null, null));
         divSpawn.appendTo(divSpawnZone);
         }
+    }
+    $("#buttonRollback").prop('disabled', false);
+}
+
+function rollbackButtonClick(){
+    if(confirm("Are you sure you want to rollback last spawn?")){
+        $("#buttonRollback").prop('disabled', true);
+        rollbackLastSpawn();
+        refreshCardsCount(false);
+        $("#divSpawnPlaceholder").empty();
+    }
+}
+
+function refreshCardsCount(setCardsTotal){
+    $("#spanCardsCountCurrent").html(zombieDeck.length);
+    if(setCardsTotal){
+        $("#spanCardsCountTotal").html(zombieDeck.length);
     }
 }
 
