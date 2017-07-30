@@ -14,12 +14,14 @@ function setButtonClick(){
 }
 
 function startNewGameButtonClick(){
-    $("#selectBaseNumberOfSurvivors").prop('disabled', false);
-    $("#selectActualNumberOfSurvivors").prop('disabled', false);
-    $("#checkboxZombieDeckBlackPlague").prop('disabled', false);
-    $("#buttonSet").show();
-    $("#buttonStartNewGame").hide();
-    $("#divSpawn").hide();
+    if(confirm("Are you sure you want to start a new game?")){
+        $("#selectBaseNumberOfSurvivors").prop('disabled', false);
+        $("#selectActualNumberOfSurvivors").prop('disabled', false);
+        $("#checkboxZombieDeckBlackPlague").prop('disabled', false);
+        $("#buttonSet").show();
+        $("#buttonStartNewGame").hide();
+        $("#divSpawn").hide();
+    }
 }
 
 function spawnButtonClick(){
