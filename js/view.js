@@ -64,7 +64,7 @@ function refreshCardsCount(setCardsTotal){
 }
 
 function writeSpawnZoneHtml(spawnZoneNumber){
-    return "<u>---Spawn Zone " + spawnZoneNumber + "---</u>";
+    return "<strong>Spawn Zone " + spawnZoneNumber + "</strong>";
 }
 
 function writeSpawnHtml(card, dangerLevel){
@@ -120,7 +120,7 @@ function writeSpawnHtml(card, dangerLevel){
             break;
         }
     }else{
-        html = "<i>skipped for balance with fewer survivors</i>";
+        html = "<em>skipped for balance with fewer survivors</em>";
     }
     return html;
 }
