@@ -20,75 +20,120 @@
     <section class="section">
       <div class="container">
         <h1 class="title">Zombicide Black Plague Spawner</h1>
-        <p class="subtitle">A web app to speed up the spawn step in a Zombicide Black Plague game.</p>
+        <h2 class="subtitle">A web app to speed up the spawn step in a Zombicide Black Plague game.</h2>
+        
         <div id="divSetGame">
-          <div>
-            <label>Base number of survivors
-              <select id="selectBaseNumberOfSurvivors">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6" selected>6</option>
-              </select>
-            </label>
+          
+          <div class="field">
+            <label class="label">Base number of survivors</label>
+            <div class="control">
+              <div class="select">
+                <select id="selectBaseNumberOfSurvivors">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6" selected>6</option>
+                </select>
+              </div>
+            </div>
           </div>
-          <div>
-            <label>Actual number of survivors
-              <select id="selectActualNumberOfSurvivors">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6" selected>6</option>
-              </select>
-            </label>
+
+          <div class="field">
+            <label class="label">Actual number of survivors</label>
+            <div class="control">  
+              <div class="select">
+                <select id="selectActualNumberOfSurvivors">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6" selected>6</option>
+                </select>
+              </div>
+            </div>
           </div>
-          <div>
-            Zombie decks to use
-            <label>
-              <input type="checkbox" id="checkboxZombieDeckBlackPlague" checked> Black Plague
-            </label>
+
+          <div class="field">
+            <label class="label">Zombie decks to use</label>
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox" id="checkboxZombieDeckBlackPlague" checked> Black Plague
+              </label>
+            </div>
           </div>
-          <div>
-            <input type="button" id="buttonSet" value="Set" onclick="setButtonClick()">
-            <input type="button" id="buttonStartNewGame" value="Start new game" onclick="startNewGameButtonClick()" style="display: none">
+
+          <div class="field is-grouped">
+            <input type="button" id="buttonSet" value="Set" onclick="setButtonClick()" class="button is-primary">
+            <input type="button" id="buttonStartNewGame" value="Start new game" onclick="startNewGameButtonClick()" class="button" style="display: none">
           </div>
+
         </div>
-        <br>
+
         <div id="divSpawn" style="display: none">
-          <div>
-            Danger level
-            <label><input type="radio" id="radioDangerLevelBlue" name="radioDangerLevel" value="1">Blue</label>
-            <label><input type="radio" id="radioDangerLevelYellow" name="radioDangerLevel" value="2">Yellow</label>
-            <label><input type="radio" id="radioDangerLevelOrange" name="radioDangerLevel" value="3">Orange</label>
-            <label><input type="radio" id="radioDangerLevelRed" name="radioDangerLevel" value="4">Red</label>
+          <hr>
+
+          <div class="field">
+            <label class="label">Danger level</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" id="radioDangerLevelBlue" name="radioDangerLevel" value="1"> Blue
+              </label>
+              <label class="radio">
+                <input type="radio" id="radioDangerLevelYellow" name="radioDangerLevel" value="2"> Yellow
+              </label>
+              <label class="radio">
+                <input type="radio" id="radioDangerLevelOrange" name="radioDangerLevel" value="3"> Orange
+              </label>
+              <label class="radio">
+                <input type="radio" id="radioDangerLevelRed" name="radioDangerLevel" value="4"> Red
+              </label>
+            </div>
           </div>
-          <div>
-            <label>Number of spawn zones
-              <select id="selectNumberOfspawnZones">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-            </label>
+
+          <div class="field">
+            <label class="label">Number of spawn zones</label>
+            <div class="control">
+              <div class="select">
+                <select id="selectNumberOfspawnZones">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+            </div>
           </div>
-          <div>
-            <input type="button" value="Spawn" onclick="spawnButtonClick()">
-            <input type="button" id="buttonRollback" value="Rollback" onclick="rollbackButtonClick()" disabled>
-            <span id="spanCardsCountCurrent">0</span>/<span id="spanCardsCountTotal">0</span> cards in deck
+
+          <div class="field">
+            <div class="field is-grouped">
+              <div class="control">
+                <input type="button" value="Spawn" onclick="spawnButtonClick()" class="button is-primary">
+              </div>
+              <div class="control">
+                <input type="button" id="buttonRollback" value="Rollback" onclick="rollbackButtonClick()" class="button" disabled>
+              </div>
+            </div>
+            <p class="help">
+              <span id="spanCardsCountCurrent">0</span>/<span id="spanCardsCountTotal">0</span> cards in deck
+            </p>
           </div>
-          <br>
-          <div id="divSpawnPlaceholder"></div>
+
+          <div id="divSpawnCards" style="display: none">
+            <hr>
+            <div id="divSpawnCardsPlaceholder">
+              
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

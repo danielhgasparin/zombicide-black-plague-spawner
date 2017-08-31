@@ -8,7 +8,7 @@ function setButtonClick(){
     $("#buttonStartNewGame").show();
     $("#radioDangerLevelBlue").prop("checked", true)
     $("#selectNumberOfspawnZones").val(1);
-    $("#divSpawnPlaceholder").empty();
+    $("#divSpawnCardsPlaceholder").empty();
     $("#divSpawn").show();
 }
 
@@ -19,21 +19,24 @@ function startNewGameButtonClick(){
         $("#checkboxZombieDeckBlackPlague").prop('disabled', false);
         $("#buttonSet").show();
         $("#buttonStartNewGame").hide();
+        $("#divSpawnCards").hide();
         $("#divSpawn").hide();
     }
 }
 
 function spawnButtonClick(){
-    let divSpawnPlaceHolder = $("#divSpawnPlaceholder");
+    let divSpawnCards = $("#divSpawnCards");
+    let divSpawnCardsPlaceholder = $("#divSpawnCardsPlaceholder");
     let dangerLevel = parseInt($('input[name=radioDangerLevel]:checked').val());
     let numberOfSpawnZones = $("#selectNumberOfspawnZones").val();
     let spawnZones = spawnZombies(numberOfSpawnZones);
     refreshCardsCount(false);
-    divSpawnPlaceHolder.empty();
+    divSpawnCards.show();
+    divSpawnCardsPlaceholder.empty();
     for(let i = 0; i < spawnZones.length; i++){
         let spawnZone = spawnZones[i];
         let divSpawnZone = $("<div>", {class: ""}).html(writeSpawnZoneHtml(i + 1));
-        divSpawnPlaceHolder.append(divSpawnZone, "<br>");
+        divSpawnCardsPlaceholder.append(divSpawnZone, "<br>");
         if(spawnZone != null){
         for(let card of spawnZone){
             let divSpawn = $("<div>", {class: ""}).html(writeSpawnHtml(card, dangerLevel));
@@ -52,7 +55,8 @@ function rollbackButtonClick(){
         $("#buttonRollback").prop('disabled', true);
         rollbackLastSpawn();
         refreshCardsCount(false);
-        $("#divSpawnPlaceholder").empty();
+        $("#divSpawnCardsPlaceholder").empty();
+        $("#divSpawnCards").hide();
     }
 }
 
