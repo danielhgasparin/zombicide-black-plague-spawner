@@ -4,8 +4,8 @@ function setButtonClick(){
     $("#selectBaseNumberOfSurvivors").prop('disabled', true);
     $("#selectActualNumberOfSurvivors").prop('disabled', true);
     $("#checkboxZombieDeckBlackPlague").prop('disabled', true);
-    $("#buttonSet").hide();
-    $("#buttonStartNewGame").show();
+    $("#divButtonSet").hide();
+    $("#divButtonStartNewGame").show();
     $("#radioDangerLevelBlue").prop("checked", true)
     $("#selectNumberOfspawnZones").val(1);
     $("#divSpawnCardsPlaceholder").empty();
@@ -17,8 +17,8 @@ function startNewGameButtonClick(){
         $("#selectBaseNumberOfSurvivors").prop('disabled', false);
         $("#selectActualNumberOfSurvivors").prop('disabled', false);
         $("#checkboxZombieDeckBlackPlague").prop('disabled', false);
-        $("#buttonSet").show();
-        $("#buttonStartNewGame").hide();
+        $("#divButtonSet").show();
+        $("#divButtonStartNewGame").hide();
         $("#divSpawnCards").hide();
         $("#divSpawn").hide();
     }
@@ -124,7 +124,7 @@ function writeSpawnHtml(card, dangerLevel){
             break;
         }
     }else{
-        html = "<em>skipped for balance with fewer survivors</em>";
+        html = "<span class=\"has-text-grey-light\"><em>skipped for balance with fewer survivors</em></span>";
     }
     return html;
 }
