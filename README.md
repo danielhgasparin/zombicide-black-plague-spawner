@@ -1,2 +1,2 @@
 # zombicide-black-plague-spawner
-A Web App for the board game Zombicide Black Plague that automates zombie spawn zones.
+A web app to speed up the spawn step in a Zombicide Black Plague game.
