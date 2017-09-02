@@ -4,11 +4,11 @@ function setButtonClick(){
     $("#selectBaseNumberOfSurvivors").prop('disabled', true);
     $("#selectActualNumberOfSurvivors").prop('disabled', true);
     $("#checkboxZombieDeckBlackPlague").prop('disabled', true);
-    $("#buttonSet").hide();
-    $("#buttonStartNewGame").show();
+    $("#divButtonSet").hide();
+    $("#divButtonStartNewGame").show();
     $("#radioDangerLevelBlue").prop("checked", true)
     $("#selectNumberOfspawnZones").val(1);
-    $("#divSpawnPlaceholder").empty();
+    $("#divSpawnCardsPlaceholder").empty();
     $("#divSpawn").show();
 }
 
@@ -17,23 +17,26 @@ function startNewGameButtonClick(){
         $("#selectBaseNumberOfSurvivors").prop('disabled', false);
         $("#selectActualNumberOfSurvivors").prop('disabled', false);
         $("#checkboxZombieDeckBlackPlague").prop('disabled', false);
-        $("#buttonSet").show();
-        $("#buttonStartNewGame").hide();
+        $("#divButtonSet").show();
+        $("#divButtonStartNewGame").hide();
+        $("#divSpawnCards").hide();
         $("#divSpawn").hide();
     }
 }
 
 function spawnButtonClick(){
-    let divSpawnPlaceHolder = $("#divSpawnPlaceholder");
+    let divSpawnCards = $("#divSpawnCards");
+    let divSpawnCardsPlaceholder = $("#divSpawnCardsPlaceholder");
     let dangerLevel = parseInt($('input[name=radioDangerLevel]:checked').val());
     let numberOfSpawnZones = $("#selectNumberOfspawnZones").val();
     let spawnZones = spawnZombies(numberOfSpawnZones);
     refreshCardsCount(false);
-    divSpawnPlaceHolder.empty();
+    divSpawnCards.show();
+    divSpawnCardsPlaceholder.empty();
     for(let i = 0; i < spawnZones.length; i++){
         let spawnZone = spawnZones[i];
         let divSpawnZone = $("<div>", {class: ""}).html(writeSpawnZoneHtml(i + 1));
-        divSpawnPlaceHolder.append(divSpawnZone, "<br>");
+        divSpawnCardsPlaceholder.append(divSpawnZone, "<br>");
         if(spawnZone != null){
         for(let card of spawnZone){
             let divSpawn = $("<div>", {class: ""}).html(writeSpawnHtml(card, dangerLevel));
@@ -52,7 +55,8 @@ function rollbackButtonClick(){
         $("#buttonRollback").prop('disabled', true);
         rollbackLastSpawn();
         refreshCardsCount(false);
-        $("#divSpawnPlaceholder").empty();
+        $("#divSpawnCardsPlaceholder").empty();
+        $("#divSpawnCards").hide();
     }
 }
 
@@ -120,7 +124,7 @@ function writeSpawnHtml(card, dangerLevel){
             break;
         }
     }else{
-        html = "<em>skipped for balance with fewer survivors</em>";
+        html = "<span class=\"has-text-grey-light\"><em>skipped for balance with fewer survivors</em></span>";
     }
     return html;
 }

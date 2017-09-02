@@ -6,9 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Zombicide Black Plague Spawner</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css" rel="stylesheet" integrity="sha256-CDVQJfU+jJGU/oyDzvnzuGXbv0rz+SyBsPQwyn7x/jQ=" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link href="packages/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="packages/bulma/bulma.custom.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="packages/jquery/jquery-3.2.1.min.js"></script>
     <script src="js/util.js"></script>
     <script src="js/model.js"></script>
     <script src="js/deck-repository.js"></script>
@@ -17,81 +18,215 @@
   </head>
 
   <body>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Zombicide Black Plague Spawner</h1>
-        <p class="subtitle">A web app to speed up the spawn step in a Zombicide Black Plague game.</p>
-        <div id="divSetGame">
-          <div>
-            <label>Base number of survivors
-              <select id="selectBaseNumberOfSurvivors">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6" selected>6</option>
-              </select>
-            </label>
-          </div>
-          <div>
-            <label>Actual number of survivors
-              <select id="selectActualNumberOfSurvivors">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6" selected>6</option>
-              </select>
-            </label>
-          </div>
-          <div>
-            Zombie decks to use
-            <label>
-              <input type="checkbox" id="checkboxZombieDeckBlackPlague" checked> Black Plague
-            </label>
-          </div>
-          <div>
-            <input type="button" id="buttonSet" value="Set" onclick="setButtonClick()">
-            <input type="button" id="buttonStartNewGame" value="Start new game" onclick="startNewGameButtonClick()" style="display: none">
-          </div>
-        </div>
-        <br>
-        <div id="divSpawn" style="display: none">
-          <div>
-            Danger level
-            <label><input type="radio" id="radioDangerLevelBlue" name="radioDangerLevel" value="1">Blue</label>
-            <label><input type="radio" id="radioDangerLevelYellow" name="radioDangerLevel" value="2">Yellow</label>
-            <label><input type="radio" id="radioDangerLevelOrange" name="radioDangerLevel" value="3">Orange</label>
-            <label><input type="radio" id="radioDangerLevelRed" name="radioDangerLevel" value="4">Red</label>
-          </div>
-          <div>
-            <label>Number of spawn zones
-              <select id="selectNumberOfspawnZones">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-            </label>
-          </div>
-          <div>
-            <input type="button" value="Spawn" onclick="spawnButtonClick()">
-            <input type="button" id="buttonRollback" value="Rollback" onclick="rollbackButtonClick()" disabled>
-            <span id="spanCardsCountCurrent">0</span>/<span id="spanCardsCountTotal">0</span> cards in deck
-          </div>
-          <br>
-          <div id="divSpawnPlaceholder"></div>
+
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Zombicide Black Plague Spawner</h1>
+          <h2 class="subtitle">A web app to speed up the spawn step in a Zombicide Black Plague game.</h2>
         </div>
       </div>
     </section>
+
+    <section class="section">
+      <div class="container">
+        <div id="divSetGame">
+          
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Base number of survivors</label>
+            </div>
+            <div class="field-body">
+              <div class="control">
+                <div class="select">
+                  <select id="selectBaseNumberOfSurvivors">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6" selected>6</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Actual number of survivors</label>
+            </div>
+            <div class="field-body">
+              <div class="control">  
+                <div class="select">
+                  <select id="selectActualNumberOfSurvivors">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6" selected>6</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Zombie decks to use</label>
+            </div>
+            <div class="field-body">
+              <div class="control">
+                <label class="checkbox">
+                  <input type="checkbox" id="checkboxZombieDeckBlackPlague" checked> Black Plague
+                </label>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+            </div>
+            <div class="field-body">
+              <div class="field is-grouped">
+                <div class="control" id="divButtonSet">
+                  <input type="button" class="button is-primary" value="Set" onclick="setButtonClick()">
+                </div>
+                <div id="divButtonStartNewGame" class="control" style="display: none">
+                  <input type="button" class="button" value="Start new game" onclick="startNewGameButtonClick()">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="divSpawn" style="display: none">
+          <hr>
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Danger level</label>
+            </div>
+            <div class="field-body">
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" id="radioDangerLevelBlue" name="radioDangerLevel" value="1">
+                  <span class="icon danger-level-blue">
+                    <i class="fa fa-fire"></i>
+                  </span>
+                </label>
+                <label class="radio">
+                  <input type="radio" id="radioDangerLevelYellow" name="radioDangerLevel" value="2">
+                  <span class="icon danger-level-yellow">
+                    <i class="fa fa-fire"></i>
+                  </span>
+                </label>
+                <label class="radio">
+                  <input type="radio" id="radioDangerLevelOrange" name="radioDangerLevel" value="3">
+                  <span class="icon danger-level-orange">
+                    <i class="fa fa-fire"></i>
+                  </span>
+                </label>
+                <label class="radio">
+                  <input type="radio" id="radioDangerLevelRed" name="radioDangerLevel" value="4">
+                  <span class="icon danger-level-red">
+                    <i class="fa fa-fire"></i>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Number of spawn zones</label>
+            </div>
+            <div class="field-body">
+              <div class="control">
+                <div class="select">
+                  <select id="selectNumberOfspawnZones">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+            </div>
+            <div class="field-body">
+              <div class="field is-grouped">
+                <div class="control">
+                  <input type="button" class="button is-primary" value="Spawn" onclick="spawnButtonClick()">
+                </div>
+                <div class="control">
+                  <input type="button" class="button" id="buttonRollback" value="Rollback" onclick="rollbackButtonClick()" disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label">
+            </div>
+            <div class="field-body">
+              <p class="help">
+                <span id="spanCardsCountCurrent">0</span>/<span id="spanCardsCountTotal">0</span> cards in deck
+              </p>
+            </div>
+          </div>
+
+          <div id="divSpawnCards" style="display: none">
+            <hr>
+
+            <div class="field is-horizontal">
+              <div class="field-label">
+              </div>
+              <div class="field-body">
+
+                <div id="divSpawnCardsPlaceholder">
+                  
+                </div>
+
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content">
+          <p class="has-text-centered">
+            Copyright © 2017 <a href="https://twitter.com/danielhgasparin" target="_blank"><span class="is-inline-block">Daniel Henrique Gasparin</span></a>.
+            <br>
+            Licensed under <a href="https://github.com/danielhgasparin/zombicide-black-plague-spawner/blob/master/LICENSE" target="_blank">MIT License</a>.
+          </p>
+          <p class="has-text-centered">
+            This is open source on
+            <a class="icon is-medium" href="https://github.com/danielhgasparin/zombicide-black-plague-spawner" target="_blank">
+              <i class="fa fa-github"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
   </body>
   
 </html>
