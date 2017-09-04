@@ -4,6 +4,7 @@ let zombieDecksToUse;
 let zombieDeck = [];
 let zombieDeckLastSnapshot = [];
 let spawnZonesToUseList = [];
+let reachedLastSpawnZone;
 
 function setGame(baseNumberOfSurvivorsToUse, actualNumberOfSurvivorsToUse, useBlackPlagueDeck){
     baseNumberOfSurvivors = baseNumberOfSurvivorsToUse;
@@ -23,6 +24,7 @@ function spawnZombies(numberOfSpawnZones){
     let remainingSpawns = numberOfSpawnZones;
     let extraSpawns = 0;
     let nextExtraSpawns = 0;
+    reachedLastSpawnZone = false;
     for(let i = 0; i < numberOfSpawnZones; i++){
         if(checkSpawnZoneToUse()){
             spawnZones[i] = [];
@@ -32,6 +34,7 @@ function spawnZombies(numberOfSpawnZones){
         }
     }
     while(remainingSpawns > 0){
+        CheckIfReachedLastSpawnZone(spawnZones, spawnZoneIndex);
         if(spawnZones[spawnZoneIndex] != null){
             remainingSpawns--;
             let card = drawZombieCard();
@@ -39,8 +42,16 @@ function spawnZombies(numberOfSpawnZones){
                 spawnZones[spawnZoneIndex].push(card);
                 switch(card.spawnType){
                     case SpawnTypeEnum.doubleSpawn:
-                        remainingSpawns++;
-                        nextExtraSpawns++;
+                        if(!reachedLastSpawnZone && nextExtraSpawns == 0){
+                            remainingSpawns++;
+                        }else{
+                            remainingSpawns += 2;
+                        }
+                        if(nextExtraSpawns == 0){
+                            nextExtraSpawns++;
+                        }else{
+                            nextExtraSpawns += 2;
+                        }
                         break;
                     case SpawnTypeEnum.necromancerSpawn:
                         remainingSpawns++;
@@ -54,11 +65,7 @@ function spawnZombies(numberOfSpawnZones){
                     //move to next spawn zone
                     spawnZoneIndex = getNextSpawnZoneIndex(spawnZoneIndex, numberOfSpawnZones);
                     if(nextExtraSpawns > 0){
-                        //mark an extra spawn next zone (to spawn twice) if there are still remaining spawns beyond the extra spawn itself
-                        //in case the last zone was already reached, only one spawn (the extra spawn) will take place in first zone again
-                        if(remainingSpawns > 1){
-                            extraSpawns = nextExtraSpawns;
-                        }
+                        extraSpawns = nextExtraSpawns;
                         nextExtraSpawns = 0;
                     }
                 }
@@ -76,6 +83,17 @@ function rollbackLastSpawn(){
 
 function getNextSpawnZoneIndex(currentIndex, length){
     return (currentIndex + 1 < length) ? currentIndex + 1 : 0;
+}
+
+function CheckIfReachedLastSpawnZone(spawnZones, currentIndex){
+    if(!reachedLastSpawnZone){
+        for(let i = currentIndex + 1; i < spawnZones.length; i++){
+            if(spawnZones[i] != null){
+                return;
+            }
+        }
+        reachedLastSpawnZone = true;
+    }
 }
 
 function drawZombieCard(){
