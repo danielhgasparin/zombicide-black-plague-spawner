@@ -662,3 +662,328 @@ let npc2ZombieDeck = [
         new Spawn(ZombieTypeEnum.npc, 4)
     )
 ]
+
+let ablobinationZombieDeck = [
+    new ZombieCard(
+        "087",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.ablobination, 1),
+        new Spawn(ZombieTypeEnum.ablobination, 1),
+        new Spawn(ZombieTypeEnum.ablobination, 1)
+    ),
+    new ZombieCard(
+        "088",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.ablobination, 1),
+        new Spawn(ZombieTypeEnum.ablobination, 1),
+        new Spawn(ZombieTypeEnum.ablobination, 1)
+    ),
+    new ZombieCard(
+        "089",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.ablobination, 1),
+        new Spawn(ZombieTypeEnum.ablobination, 1),
+        new Spawn(ZombieTypeEnum.ablobination, 1)
+    ),
+    new ZombieCard(
+        "090",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.ablobination, 1),
+        new Spawn(ZombieTypeEnum.ablobination, 1),
+        new Spawn(ZombieTypeEnum.ablobination, 1)
+    ),
+]
+
+let abominatrollZombieDeck = [
+    new ZombieCard(
+        "091",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominatroll, 1),
+        new Spawn(ZombieTypeEnum.abominatroll, 1),
+        new Spawn(ZombieTypeEnum.abominatroll, 1)
+    ),
+    new ZombieCard(
+        "092",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominatroll, 1),
+        new Spawn(ZombieTypeEnum.abominatroll, 1),
+        new Spawn(ZombieTypeEnum.abominatroll, 1)
+    ),
+    new ZombieCard(
+        "093",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominatroll, 1),
+        new Spawn(ZombieTypeEnum.abominatroll, 1),
+        new Spawn(ZombieTypeEnum.abominatroll, 1)
+    ),
+    new ZombieCard(
+        "094",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominatroll, 1),
+        new Spawn(ZombieTypeEnum.abominatroll, 1),
+        new Spawn(ZombieTypeEnum.abominatroll, 1)
+    ),
+]
+
+let abominotaurZombieDeck = [
+    new ZombieCard(
+        "095",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominotaur, 1),
+        new Spawn(ZombieTypeEnum.abominotaur, 1),
+        new Spawn(ZombieTypeEnum.abominotaur, 1)
+    ),
+    new ZombieCard(
+        "096",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominotaur, 1),
+        new Spawn(ZombieTypeEnum.abominotaur, 1),
+        new Spawn(ZombieTypeEnum.abominotaur, 1)
+    ),
+    new ZombieCard(
+        "097",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominotaur, 1),
+        new Spawn(ZombieTypeEnum.abominotaur, 1),
+        new Spawn(ZombieTypeEnum.abominotaur, 1)
+    ),
+    new ZombieCard(
+        "098",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominotaur, 1),
+        new Spawn(ZombieTypeEnum.abominotaur, 1),
+        new Spawn(ZombieTypeEnum.abominotaur, 1)
+    ),
+]
+
+let deadeyeWalkersZombieDeck = [
+    new ZombieCard(
+        "099",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 1),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 2),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 3),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 4)
+    ),
+    new ZombieCard(
+        "100",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 2),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 3),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 4),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 5)
+    ),
+    new ZombieCard(
+        "101",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 3),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 4),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 5),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 6)
+    ),
+    new ZombieCard(
+        "102",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 1),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 2),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 3),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 4)
+    ),
+    new ZombieCard(
+        "103",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 2),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 3),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 4),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 5)
+    ),
+    new ZombieCard(
+        "104",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 3),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 4),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 5),
+        new Spawn(ZombieTypeEnum.deadeyeWalker, 6)
+    )
+]
+
+let murderOfCrowzZombieDeck = [
+    new ZombieCard(
+        "105",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    ),
+    new ZombieCard(
+        "106",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    ),
+    new ZombieCard(
+        "107",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    ),
+    new ZombieCard(
+        "108",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    ),
+    new ZombieCard(
+        "109",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    ),
+    new ZombieCard(
+        "110",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    ),
+    new ZombieCard(
+        "111",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    ),
+    new ZombieCard(
+        "112",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    ),
+    new ZombieCard(
+        "113",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    ),
+    new ZombieCard(
+        "114",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    ),
+    new ZombieCard(
+        "115",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    ),
+    new ZombieCard(
+        "116",
+        SpawnTypeEnum.normalSpawn,
+        new Spawn(ZombieTypeEnum.crowz, 2),
+        new Spawn(ZombieTypeEnum.crowz, 3),
+        new Spawn(ZombieTypeEnum.crowz, 4),
+        new Spawn(ZombieTypeEnum.crowz, 5)
+    )
+]
+
+let abominalphaZombieDeck = [
+    new ZombieCard(
+        "117",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominalpha, 1),
+        new Spawn(ZombieTypeEnum.abominalpha, 1),
+        new Spawn(ZombieTypeEnum.abominalpha, 1)
+    ),
+    new ZombieCard(
+        "118",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominalpha, 1),
+        new Spawn(ZombieTypeEnum.abominalpha, 1),
+        new Spawn(ZombieTypeEnum.abominalpha, 1)
+    ),
+    new ZombieCard(
+        "119",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominalpha, 1),
+        new Spawn(ZombieTypeEnum.abominalpha, 1),
+        new Spawn(ZombieTypeEnum.abominalpha, 1)
+    ),
+    new ZombieCard(
+        "120",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominalpha, 1),
+        new Spawn(ZombieTypeEnum.abominalpha, 1),
+        new Spawn(ZombieTypeEnum.abominalpha, 1)
+    ),
+]
+
+let abominaratZombieDeck = [
+    new ZombieCard(
+        "121",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominarat, 1),
+        new Spawn(ZombieTypeEnum.abominarat, 1),
+        new Spawn(ZombieTypeEnum.abominarat, 1)
+    ),
+    new ZombieCard(
+        "122",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominarat, 1),
+        new Spawn(ZombieTypeEnum.abominarat, 1),
+        new Spawn(ZombieTypeEnum.abominarat, 1)
+    ),
+    new ZombieCard(
+        "123",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominarat, 1),
+        new Spawn(ZombieTypeEnum.abominarat, 1),
+        new Spawn(ZombieTypeEnum.abominarat, 1)
+    ),
+    new ZombieCard(
+        "124",
+        SpawnTypeEnum.normalSpawn,
+        null,
+        new Spawn(ZombieTypeEnum.abominarat, 1),
+        new Spawn(ZombieTypeEnum.abominarat, 1),
+        new Spawn(ZombieTypeEnum.abominarat, 1)
+    ),
+]

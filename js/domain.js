@@ -6,7 +6,21 @@ let zombieDeckLastSnapshot = [];
 let spawnZonesToUseList = [];
 let reachedLastSpawnZone;
 
-function setGame(baseNumberOfSurvivorsToUse, actualNumberOfSurvivorsToUse, useBlackPlagueDeck, useWulfsburgDeck, useNpc1Deck, useNpc2Deck){
+function setGame(
+    baseNumberOfSurvivorsToUse, 
+    actualNumberOfSurvivorsToUse, 
+    useBlackPlagueDeck, 
+    useWulfsburgDeck, 
+    useNpc1Deck, 
+    useNpc2Deck,
+    useAblobinationDeck,
+    useAbominatrollDeck,
+    useAbominotaurDeck,
+    useDeadeyeWalkersDeck,
+    useMurderOfCrowzDeck,
+    useAbominalphaDeck,
+    useAbominaratDeck
+){
     baseNumberOfSurvivors = baseNumberOfSurvivorsToUse;
     actualNumberOfSurvivors = actualNumberOfSurvivorsToUse;
     zombieDecksToUse = 0;
@@ -21,6 +35,27 @@ function setGame(baseNumberOfSurvivorsToUse, actualNumberOfSurvivorsToUse, useBl
     }
     if(useNpc2Deck){
         zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.npc2;
+    }
+    if(useAblobinationDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.ablobination;
+    }
+    if(useAbominatrollDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.abominatroll;
+    }
+    if(useAbominotaurDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.abominotaur;
+    }
+    if(useDeadeyeWalkersDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.deadeyeWalkers;
+    }
+    if(useMurderOfCrowzDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.murderOfCrowz;
+    }
+    if(useAbominalphaDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.abominalpha;
+    }
+    if(useAbominaratDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.abominarat;
     }
     buildZombieDeck();
     buildSpawnZonesToUseList();
@@ -127,6 +162,27 @@ function buildZombieDeck(){
     }
     if(zombieDecksToUse & ZombieDeckEnum.npc2){
         Array.prototype.push.apply(zombieDeck, npc2ZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.ablobination){
+        Array.prototype.push.apply(zombieDeck, ablobinationZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.abominatroll){
+        Array.prototype.push.apply(zombieDeck, abominatrollZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.abominotaur){
+        Array.prototype.push.apply(zombieDeck, abominotaurZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.deadeyeWalkers){
+        Array.prototype.push.apply(zombieDeck, deadeyeWalkersZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.murderOfCrowz){
+        Array.prototype.push.apply(zombieDeck, murderOfCrowzZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.abominalpha){
+        Array.prototype.push.apply(zombieDeck, abominalphaZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.abominarat){
+        Array.prototype.push.apply(zombieDeck, abominaratZombieDeck);
     }
 }
 

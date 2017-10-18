@@ -5,7 +5,14 @@ function setButtonClick(){
         $("#checkboxZombieDeckBlackPlague").is(':checked'),
         $("#checkboxZombieDeckWulfsburg").is(':checked'),
         $("#checkboxZombieDeckNpc1").is(':checked'),
-        $("#checkboxZombieDeckNpc2").is(':checked')
+        $("#checkboxZombieDeckNpc2").is(':checked'),
+        $("#checkboxZombieDeckAblobination").is(':checked'),
+        $("#checkboxZombieDeckAbominatroll").is(':checked'),
+        $("#checkboxZombieDeckAbominotaur").is(':checked'),
+        $("#checkboxZombieDeckDeadeyeWalkers").is(':checked'),
+        $("#checkboxZombieDeckMurderOfCrowz").is(':checked'),
+        $("#checkboxZombieDeckAbominalpha").is(':checked'),
+        $("#checkboxZombieDeckAbominarat").is(':checked')
     );
     refreshCardsCount(true);
     $("#fieldsetSetGame").prop('disabled', true);
@@ -104,6 +111,27 @@ function writeSpawnHtml(card, dangerLevel){
                     break;
                 case ZombieTypeEnum.npc:
                     html += "NPC";
+                    break;
+                case ZombieTypeEnum.ablobination:
+                    html += "Ablobination (Abomination)";
+                    break;
+                case ZombieTypeEnum.abominatroll:
+                    html += "Abominatroll (Abomination)";
+                    break;
+                case ZombieTypeEnum.abominotaur:
+                    html += "Abominotaur (Abomination)";
+                    break;
+                case ZombieTypeEnum.deadeyeWalker:
+                    html += "Deadeye Walker";
+                    break;
+                case ZombieTypeEnum.crowz:
+                    html += "Crowz";
+                    break;
+                case ZombieTypeEnum.abominalpha:
+                    html += "Abominalpha (Abomination)";
+                    break;
+                case ZombieTypeEnum.abominarat:
+                    html += "Abominarat (Abomination)";
                     break;
                 }
                 html += " x " + spawn.quantity;

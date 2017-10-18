@@ -5,7 +5,14 @@ let ZombieTypeEnum = Object.freeze({
     abomination: 4,
     wolfz: 5,
     wolfbomination: 6,
-    npc: 7
+    npc: 7,
+    ablobination: 8,
+    abominatroll: 9,
+    abominotaur: 10,
+    deadeyeWalker: 11,
+    crowz: 12,
+    abominalpha: 13,
+    abominarat: 14
 })
 
 let SpawnTypeEnum = Object.freeze({
