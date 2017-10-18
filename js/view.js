@@ -23,6 +23,7 @@ function startNewGameButtonClick(){
         $("#divButtonSet").show();
         $("#divButtonStartNewGame").hide();
         $("#divSpawnCards").hide();
+        $("#buttonRollback").prop('disabled', true);
         $("#divSpawn").hide();
     }
 }
