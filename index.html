@@ -32,58 +32,77 @@
       <div class="container">
         <div id="divSetGame">
           
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Base number of survivors</label>
-            </div>
-            <div class="field-body">
-              <div class="control">
-                <div class="select">
-                  <select id="selectBaseNumberOfSurvivors">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6" selected>6</option>
-                  </select>
+          <fieldset id="fieldsetSetGame">
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Base number of survivors</label>
+              </div>
+              <div class="field-body">
+                <div class="control">
+                  <div class="select">
+                    <select id="selectBaseNumberOfSurvivors">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6" selected>6</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Actual number of survivors</label>
-            </div>
-            <div class="field-body">
-              <div class="control">  
-                <div class="select">
-                  <select id="selectActualNumberOfSurvivors">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6" selected>6</option>
-                  </select>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Actual number of survivors</label>
+              </div>
+              <div class="field-body">
+                <div class="control">  
+                  <div class="select">
+                    <select id="selectActualNumberOfSurvivors">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6" selected>6</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="field is-horizontal">
-            <div class="field-label">
-              <label class="label">Zombie decks to use</label>
-            </div>
-            <div class="field-body">
-              <div class="control">
-                <label class="checkbox">
-                  <input type="checkbox" id="checkboxZombieDeckBlackPlague" checked> Black Plague
-                </label>
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Zombie decks to use</label>
+              </div>
+              <div class="field-body">
+                <div class="field is-grouped is-grouped-multiline">
+                  <div class="control">
+                    <label class="checkbox">
+                      <input type="checkbox" id="checkboxZombieDeckBlackPlague" checked> Black Plague
+                    </label>
+                  </div>
+                  <div class="control">
+                    <label class="checkbox">
+                      <input type="checkbox" id="checkboxZombieDeckWulfsburg"> Wulfsburg
+                    </label>
+                  </div>
+                  <div class="control">
+                    <label class="checkbox">
+                      <input type="checkbox" id="checkboxZombieDeckNpc1"> NPC-1
+                    </label>
+                  </div>
+                  <div class="control">
+                    <label class="checkbox">
+                      <input type="checkbox" id="checkboxZombieDeckNpc2"> NPC-2
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </fieldset>
           <br>
 
           <div class="field is-horizontal">

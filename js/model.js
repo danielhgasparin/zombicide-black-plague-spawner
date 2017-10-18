@@ -2,7 +2,10 @@ let ZombieTypeEnum = Object.freeze({
     walker: 1,
     fatty: 2,
     runner: 3,
-    abomination: 4
+    abomination: 4,
+    wolfz: 5,
+    wolfbomination: 6,
+    npc: 7
 })
 
 let SpawnTypeEnum = Object.freeze({

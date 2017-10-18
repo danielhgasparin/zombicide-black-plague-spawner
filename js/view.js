@@ -1,9 +1,14 @@
 function setButtonClick(){
-    setGame($("#selectBaseNumberOfSurvivors").val(), $("#selectActualNumberOfSurvivors").val(), $("#checkboxZombieDeckBlackPlague").is(':checked'));
+    setGame(
+        $("#selectBaseNumberOfSurvivors").val(), 
+        $("#selectActualNumberOfSurvivors").val(), 
+        $("#checkboxZombieDeckBlackPlague").is(':checked'),
+        $("#checkboxZombieDeckWulfsburg").is(':checked'),
+        $("#checkboxZombieDeckNpc1").is(':checked'),
+        $("#checkboxZombieDeckNpc2").is(':checked')
+    );
     refreshCardsCount(true);
-    $("#selectBaseNumberOfSurvivors").prop('disabled', true);
-    $("#selectActualNumberOfSurvivors").prop('disabled', true);
-    $("#checkboxZombieDeckBlackPlague").prop('disabled', true);
+    $("#fieldsetSetGame").prop('disabled', true);
     $("#divButtonSet").hide();
     $("#divButtonStartNewGame").show();
     $("#radioDangerLevelBlue").prop("checked", true)
@@ -14,9 +19,7 @@ function setButtonClick(){
 
 function startNewGameButtonClick(){
     if(confirm("Are you sure you want to start a new game?")){
-        $("#selectBaseNumberOfSurvivors").prop('disabled', false);
-        $("#selectActualNumberOfSurvivors").prop('disabled', false);
-        $("#checkboxZombieDeckBlackPlague").prop('disabled', false);
+        $("#fieldsetSetGame").prop('disabled', false);
         $("#divButtonSet").show();
         $("#divButtonStartNewGame").hide();
         $("#divSpawnCards").hide();
@@ -91,6 +94,15 @@ function writeSpawnHtml(card, dangerLevel){
                     break;
                 case ZombieTypeEnum.abomination:
                     html += "Abomination";
+                    break;
+                case ZombieTypeEnum.wolfz:
+                    html += "Wolfz";
+                    break;
+                case ZombieTypeEnum.wolfbomination:
+                    html += "Wolfbomination";
+                    break;
+                case ZombieTypeEnum.npc:
+                    html += "NPC";
                     break;
                 }
                 html += " x " + spawn.quantity;

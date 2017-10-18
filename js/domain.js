@@ -6,12 +6,21 @@ let zombieDeckLastSnapshot = [];
 let spawnZonesToUseList = [];
 let reachedLastSpawnZone;
 
-function setGame(baseNumberOfSurvivorsToUse, actualNumberOfSurvivorsToUse, useBlackPlagueDeck){
+function setGame(baseNumberOfSurvivorsToUse, actualNumberOfSurvivorsToUse, useBlackPlagueDeck, useWulfsburgDeck, useNpc1Deck, useNpc2Deck){
     baseNumberOfSurvivors = baseNumberOfSurvivorsToUse;
     actualNumberOfSurvivors = actualNumberOfSurvivorsToUse;
     zombieDecksToUse = 0;
     if(useBlackPlagueDeck){
         zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.blackPlague;
+    }
+    if(useWulfsburgDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.wulfsburg;
+    }
+    if(useNpc1Deck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.npc1;
+    }
+    if(useNpc2Deck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.npc2;
     }
     buildZombieDeck();
     buildSpawnZonesToUseList();
@@ -109,6 +118,15 @@ function buildZombieDeck(){
     zombieDeck = [];
     if(zombieDecksToUse & ZombieDeckEnum.blackPlague){
         Array.prototype.push.apply(zombieDeck, blackPlagueZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.wulfsburg){
+        Array.prototype.push.apply(zombieDeck, wulfsburgZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.npc1){
+        Array.prototype.push.apply(zombieDeck, npc1ZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.npc2){
+        Array.prototype.push.apply(zombieDeck, npc2ZombieDeck);
     }
 }
 
