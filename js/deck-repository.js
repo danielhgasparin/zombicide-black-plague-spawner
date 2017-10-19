@@ -16,7 +16,8 @@ let ZombieDeckEnum = Object.freeze({
     ostokarThePale: 8192,
     evilTroy: 16384,
     queenMedea: 32768,
-    grin: 65536
+    grin: 65536,
+    erikSummoner: 131072
 })
 
 let blackPlagueZombieDeck = [
@@ -342,27 +343,51 @@ let blackPlagueZombieDeck = [
     ),
     new ZombieCard(
         "041",
-        SpawnTypeEnum.necromancerSpawn
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer)
     ),
     new ZombieCard(
         "042",
-        SpawnTypeEnum.necromancerSpawn
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer)
     ),
     new ZombieCard(
         "043",
-        SpawnTypeEnum.necromancerSpawn
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer)
     ),
     new ZombieCard(
         "044",
-        SpawnTypeEnum.necromancerSpawn
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer)
     ),
     new ZombieCard(
         "045",
-        SpawnTypeEnum.necromancerSpawn
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer)
     ),
     new ZombieCard(
         "046",
-        SpawnTypeEnum.necromancerSpawn
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer),
+        new Spawn(ZombieTypeEnum.necromancer)
     ),
     new ZombieCard(
         "047",
@@ -986,4 +1011,361 @@ let abominaratZombieDeck = [
         new Spawn(ZombieTypeEnum.abominarat, 1),
         new Spawn(ZombieTypeEnum.abominarat, 1)
     ),
+]
+
+let tomekupaZombieDeck = [
+    new ZombieCard(
+        "125",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa)
+    ),
+    new ZombieCard(
+        "126",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa)
+    ),
+    new ZombieCard(
+        "127",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa)
+    ),
+    new ZombieCard(
+        "128",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa)
+    ),
+    new ZombieCard(
+        "129",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa)
+    ),
+    new ZombieCard(
+        "130",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa),
+        new Spawn(ZombieTypeEnum.tomekupa)
+    )
+]
+
+let blackheartZombieDeck = [
+    new ZombieCard(
+        "131",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart)
+    ),
+    new ZombieCard(
+        "132",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart)
+    ),
+    new ZombieCard(
+        "133",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart)
+    ),
+    new ZombieCard(
+        "134",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart)
+    ),
+    new ZombieCard(
+        "135",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart)
+    ),
+    new ZombieCard(
+        "136",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart),
+        new Spawn(ZombieTypeEnum.blackheart)
+    )
+]
+
+let ostokarThePaleZombieDeck = [
+    new ZombieCard(
+        "137",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar)
+    ),
+    new ZombieCard(
+        "138",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar)
+    ),
+    new ZombieCard(
+        "139",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar)
+    ),
+    new ZombieCard(
+        "140",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar)
+    ),
+    new ZombieCard(
+        "141",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar)
+    ),
+    new ZombieCard(
+        "142",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar),
+        new Spawn(ZombieTypeEnum.ostokar)
+    )
+]
+
+let evilTroyZombieDeck = [
+    new ZombieCard(
+        "143",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy)
+    ),
+    new ZombieCard(
+        "144",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy)
+    ),
+    new ZombieCard(
+        "145",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy)
+    ),
+    new ZombieCard(
+        "146",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy)
+    ),
+    new ZombieCard(
+        "147",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy)
+    ),
+    new ZombieCard(
+        "148",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy),
+        new Spawn(ZombieTypeEnum.evilTroy)
+    )
+]
+
+let queenMedeaZombieDeck = [
+    new ZombieCard(
+        "149",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea)
+    ),
+    new ZombieCard(
+        "150",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea)
+    ),
+    new ZombieCard(
+        "151",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea)
+    ),
+    new ZombieCard(
+        "152",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea)
+    ),
+    new ZombieCard(
+        "153",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea)
+    ),
+    new ZombieCard(
+        "154",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea),
+        new Spawn(ZombieTypeEnum.queenMedea)
+    )
+]
+
+let grinZombieDeck = [
+    new ZombieCard(
+        "155",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin)
+    ),
+    new ZombieCard(
+        "156",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin)
+    ),
+    new ZombieCard(
+        "157",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin)
+    ),
+    new ZombieCard(
+        "158",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin)
+    ),
+    new ZombieCard(
+        "159",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin)
+    ),
+    new ZombieCard(
+        "160",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin),
+        new Spawn(ZombieTypeEnum.grin)
+    )
+]
+
+let erikSummonerZombieDeck = [
+    new ZombieCard(
+        "161",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner)
+    ),
+    new ZombieCard(
+        "162",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner)
+    ),
+    new ZombieCard(
+        "163",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner)
+    ),
+    new ZombieCard(
+        "164",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner)
+    ),
+    new ZombieCard(
+        "165",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner)
+    ),
+    new ZombieCard(
+        "166",
+        SpawnTypeEnum.necromancerSpawn,
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner),
+        new Spawn(ZombieTypeEnum.erikSummoner)
+    )
 ]

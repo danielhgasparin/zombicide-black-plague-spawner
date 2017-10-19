@@ -19,7 +19,14 @@ function setGame(
     useDeadeyeWalkersDeck,
     useMurderOfCrowzDeck,
     useAbominalphaDeck,
-    useAbominaratDeck
+    useAbominaratDeck,
+    useTomekupaDeck,
+    useBlackheartDeck,
+    useOstokarThePaleDeck,
+    useEvilTroyDeck,
+    useQueenMedeaDeck,
+    useGrinDeck,
+    useErikSummonerDeck
 ){
     baseNumberOfSurvivors = baseNumberOfSurvivorsToUse;
     actualNumberOfSurvivors = actualNumberOfSurvivorsToUse;
@@ -56,6 +63,27 @@ function setGame(
     }
     if(useAbominaratDeck){
         zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.abominarat;
+    }
+    if(useTomekupaDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.tomekupa;
+    }
+    if(useBlackheartDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.blackheart;
+    }
+    if(useOstokarThePaleDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.ostokarThePale;
+    }
+    if(useEvilTroyDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.evilTroy;
+    }
+    if(useQueenMedeaDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.queenMedea;
+    }
+    if(useGrinDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.grin;
+    }
+    if(useErikSummonerDeck){
+        zombieDecksToUse = zombieDecksToUse | ZombieDeckEnum.erikSummoner;
     }
     buildZombieDeck();
     buildSpawnZonesToUseList();
@@ -183,6 +211,27 @@ function buildZombieDeck(){
     }
     if(zombieDecksToUse & ZombieDeckEnum.abominarat){
         Array.prototype.push.apply(zombieDeck, abominaratZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.tomekupa){
+        Array.prototype.push.apply(zombieDeck, tomekupaZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.blackheart){
+        Array.prototype.push.apply(zombieDeck, blackheartZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.ostokarThePale){
+        Array.prototype.push.apply(zombieDeck, ostokarThePaleZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.evilTroy){
+        Array.prototype.push.apply(zombieDeck, evilTroyZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.queenMedea){
+        Array.prototype.push.apply(zombieDeck, queenMedeaZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.grin){
+        Array.prototype.push.apply(zombieDeck, grinZombieDeck);
+    }
+    if(zombieDecksToUse & ZombieDeckEnum.erikSummoner){
+        Array.prototype.push.apply(zombieDeck, erikSummonerZombieDeck);
     }
 }
 

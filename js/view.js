@@ -12,7 +12,14 @@ function setButtonClick(){
         $("#checkboxZombieDeckDeadeyeWalkers").is(':checked'),
         $("#checkboxZombieDeckMurderOfCrowz").is(':checked'),
         $("#checkboxZombieDeckAbominalpha").is(':checked'),
-        $("#checkboxZombieDeckAbominarat").is(':checked')
+        $("#checkboxZombieDeckAbominarat").is(':checked'),
+        $("#checkboxZombieDeckTomekupa").is(':checked'),
+        $("#checkboxZombieDeckBlackheart").is(':checked'),
+        $("#checkboxZombieDeckOstokarThePale").is(':checked'),
+        $("#checkboxZombieDeckEvilTroy").is(':checked'),
+        $("#checkboxZombieDeckQueenMedea").is(':checked'),
+        $("#checkboxZombieDeckGrin").is(':checked'),
+        $("#checkboxZombieDeckErikSummoner").is(':checked')
     );
     refreshCardsCount(true);
     $("#fieldsetSetGame").prop('disabled', true);
@@ -49,13 +56,13 @@ function spawnButtonClick(){
         let divSpawnZone = $("<div>", {class: ""}).html(writeSpawnZoneHtml(i + 1));
         divSpawnCardsPlaceholder.append(divSpawnZone, "<br>");
         if(spawnZone != null){
-        for(let card of spawnZone){
-            let divSpawn = $("<div>", {class: ""}).html(writeSpawnHtml(card, dangerLevel));
-            divSpawn.appendTo(divSpawnZone);
-        }
+            for(let card of spawnZone){
+                let divSpawn = $("<div>", {class: ""}).html(writeSpawnHtml(card, dangerLevel));
+                divSpawn.appendTo(divSpawnZone);
+            }
         }else{
-        let divSpawn = $("<div>", {class: ""}).html(writeSpawnHtml(null, null));
-        divSpawn.appendTo(divSpawnZone);
+            let divSpawn = $("<div>", {class: ""}).html(writeSpawnHtml(null, null));
+            divSpawn.appendTo(divSpawnZone);
         }
     }
     $("#buttonRollback").prop('disabled', false);
@@ -88,81 +95,106 @@ function writeSpawnHtml(card, dangerLevel){
         let spawn = getSpawnFromCard(card, dangerLevel);
         html = card.number + ": ";
         switch(card.spawnType){
-        case SpawnTypeEnum.normalSpawn:
-            if(spawn != null){
-                switch(spawn.zombieType){
-                case ZombieTypeEnum.walker:
-                    html += "Walker";
-                    break;
-                case ZombieTypeEnum.fatty:
-                    html += "Fatty";
-                    break;
-                case ZombieTypeEnum.runner:
-                    html += "Runner";
-                    break;
-                case ZombieTypeEnum.abomination:
-                    html += "Abomination";
-                    break;
-                case ZombieTypeEnum.wolfz:
-                    html += "Wolfz";
-                    break;
-                case ZombieTypeEnum.wolfbomination:
-                    html += "Wolfbomination";
-                    break;
-                case ZombieTypeEnum.npc:
-                    html += "NPC";
-                    break;
-                case ZombieTypeEnum.ablobination:
-                    html += "Ablobination (Abomination)";
-                    break;
-                case ZombieTypeEnum.abominatroll:
-                    html += "Abominatroll (Abomination)";
-                    break;
-                case ZombieTypeEnum.abominotaur:
-                    html += "Abominotaur (Abomination)";
-                    break;
-                case ZombieTypeEnum.deadeyeWalker:
-                    html += "Deadeye Walker";
-                    break;
-                case ZombieTypeEnum.crowz:
-                    html += "Crowz";
-                    break;
-                case ZombieTypeEnum.abominalpha:
-                    html += "Abominalpha (Abomination)";
-                    break;
-                case ZombieTypeEnum.abominarat:
-                    html += "Abominarat (Abomination)";
-                    break;
+            case SpawnTypeEnum.normalSpawn:
+                if(spawn != null){
+                    switch(spawn.zombieType){
+                        case ZombieTypeEnum.walker:
+                            html += "Walker";
+                            break;
+                        case ZombieTypeEnum.fatty:
+                            html += "Fatty";
+                            break;
+                        case ZombieTypeEnum.runner:
+                            html += "Runner";
+                            break;
+                        case ZombieTypeEnum.abomination:
+                            html += "Abomination";
+                            break;
+                        case ZombieTypeEnum.wolfz:
+                            html += "Wolfz";
+                            break;
+                        case ZombieTypeEnum.wolfbomination:
+                            html += "Wolfbomination";
+                            break;
+                        case ZombieTypeEnum.npc:
+                            html += "NPC";
+                            break;
+                        case ZombieTypeEnum.ablobination:
+                            html += "Ablobination (Abomination)";
+                            break;
+                        case ZombieTypeEnum.abominatroll:
+                            html += "Abominatroll (Abomination)";
+                            break;
+                        case ZombieTypeEnum.abominotaur:
+                            html += "Abominotaur (Abomination)";
+                            break;
+                        case ZombieTypeEnum.deadeyeWalker:
+                            html += "Deadeye Walker";
+                            break;
+                        case ZombieTypeEnum.crowz:
+                            html += "Crowz";
+                            break;
+                        case ZombieTypeEnum.abominalpha:
+                            html += "Abominalpha (Abomination)";
+                            break;
+                        case ZombieTypeEnum.abominarat:
+                            html += "Abominarat (Abomination)";
+                            break;
+                    }
+                    html += " x " + spawn.quantity;
+                }else{
+                    html += "Nothing";
                 }
-                html += " x " + spawn.quantity;
-            }else{
-                html += "Nothing";
-            }
-            break;
-        case SpawnTypeEnum.extraActivation:
-            html += "Extra activation - ";
-            if(spawn != null){
-                switch(spawn.zombieType){
-                case ZombieTypeEnum.walker:
-                    html += "All Walkers";
-                    break;
-                case ZombieTypeEnum.fatty:
-                    html += "All Fatties";
-                    break;
-                case ZombieTypeEnum.runner:
-                    html += "All Runners";
-                    break;
+                break;
+            case SpawnTypeEnum.extraActivation:
+                html += "Extra activation - ";
+                if(spawn != null){
+                    switch(spawn.zombieType){
+                        case ZombieTypeEnum.walker:
+                            html += "All Walkers";
+                            break;
+                        case ZombieTypeEnum.fatty:
+                            html += "All Fatties";
+                            break;
+                        case ZombieTypeEnum.runner:
+                            html += "All Runners";
+                            break;
+                    }
+                }else{
+                    html += "No one";
                 }
-            }else{
-                html += "No one";
-            }
-            break;
-        case SpawnTypeEnum.doubleSpawn:
-            html += "Double spawn";
-            break;
-        case SpawnTypeEnum.necromancerSpawn:
-            html += "Necromancer";
-            break;
+                break;
+            case SpawnTypeEnum.doubleSpawn:
+                html += "Double spawn";
+                break;
+            case SpawnTypeEnum.necromancerSpawn:
+                switch(spawn.zombieType){
+                    case ZombieTypeEnum.necromancer:
+                        html += "Necromancer";
+                        break;
+                    case ZombieTypeEnum.tomekupa:
+                        html += "To-Me-Ku-Pa (Necromancer)";
+                        break;
+                    case ZombieTypeEnum.blackheart:
+                        html += "The Blackheart (Necromancer)";
+                        break;
+                    case ZombieTypeEnum.ostokar:
+                        html += "Ostokar the Pale (Necromancer)";
+                        break;
+                    case ZombieTypeEnum.evilTroy:
+                        html += "Evil Troy (Necromancer)";
+                        break;
+                    case ZombieTypeEnum.queenMedea:
+                        html += "Queen Medea (Necromancer)";
+                        break;
+                    case ZombieTypeEnum.grin:
+                        html += "Grin (Necromancer)";
+                        break;
+                    case ZombieTypeEnum.erikSummoner:
+                        html += "Erik Summoner (Necromancer)";
+                        break;
+                }
+                break;
         }
     }else{
         html = "<span class=\"has-text-grey-light\"><em>skipped for balance with fewer survivors</em></span>";
