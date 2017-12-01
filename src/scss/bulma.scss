@@ -1,0 +1,10 @@
+$red-zombie: #a32d28;
+$red-zombie-invert: #fff;
+
+$primary: $red-zombie;
+$primary-invert: $red-zombie-invert;
+
+$link: $primary !default;
+$link-invert: $primary-invert !default;
+
+@import "./node_modules/bulma/bulma";
