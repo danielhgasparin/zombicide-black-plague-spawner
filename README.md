@@ -1,1 +1,1 @@
-This branch contains the publishing files on GitHub Pages.
+The gh_pages branch contains the publishing files on GitHub Pages.
