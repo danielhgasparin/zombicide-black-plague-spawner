@@ -17,7 +17,7 @@
     "build:sass": "node-sass src/scss/bulma.scss dist/lib/bulma/bulma.custom.css",
     "prebuild": "npm run clean",
     "build": "npm run build:sass && npm run copy",
-    "prestart": "npm run build",
+    "postinstall": "npm run build",
     "start": "node index.js"
   },
   "repository": {
