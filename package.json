@@ -2,18 +2,23 @@
   "name": "zombicide-black-plague-spawner",
   "version": "1.0.0",
   "description": "A web app to speed up the spawn step in a Zombicide Black Plague game.",
+  "engines": {
+    "node": "8.9.1"
+  },
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist/*",
-    "copy:index": "cpx src/index.html dist/",
-    "copy:js": "cpx src/js/*.js dist/js/",
-    "copy:css": "cpx src/css/*.css dist/css/",
-    "copy:font-awesome": "cpx node_modules/font-awesome/css/font-awesome.min.css dist/lib/font-awesome/css && cpx node_modules/font-awesome/fonts/* dist/lib/font-awesome/fonts/",
-    "copy:jquery": "cpx node_modules/jquery/dist/jquery.min.js dist/lib/jquery/",
+    "clean": "rimraf \"dist/*\"",
+    "copy:index": "cpx \"src/index.html\" \"dist/\"",
+    "copy:js": "cpx \"src/js/*.js\" \"dist/js/\"",
+    "copy:css": "cpx \"src/css/*.css\" \"dist/css/\"",
+    "copy:font-awesome": "cpx \"node_modules/font-awesome/css/font-awesome.min.css\" \"dist/lib/font-awesome/css\" && cpx \"node_modules/font-awesome/fonts/*\" \"dist/lib/font-awesome/fonts/\"",
+    "copy:jquery": "cpx \"node_modules/jquery/dist/jquery.min.js\" \"dist/lib/jquery/\"",
     "copy": "npm run copy:index && npm run copy:js && npm run copy:css && npm run copy:font-awesome && npm run copy:jquery",
-    "build:sass": "node-sass src/scss/bulma.scss dist/lib/bulma/bulma.custom.css",
+    "build:sass": "node-sass \"src/scss/bulma.scss\" \"dist/lib/bulma/bulma.custom.css\"",
     "prebuild": "npm run clean",
-    "build": "npm run build:sass && npm run copy"
+    "build": "npm run build:sass && npm run copy",
+    "postinstall": "npm run build",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +36,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "node-sass": "^4.7.2",
+    "node-static": "^0.7.10",
     "rimraf": "^2.6.2"
   }
 }
