@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "copy:index": "cpx src/index.html dist/",
-    "copy:js": "cpx src/js/*.js dist/js/",
+    "copy:js": "cpx \"src/js/*.js\" \"dist/js/\"",
     "copy:css": "cpx src/css/*.css dist/css/",
     "copy:font-awesome": "cpx node_modules/font-awesome/css/font-awesome.min.css dist/lib/font-awesome/css && cpx node_modules/font-awesome/fonts/* dist/lib/font-awesome/fonts/",
     "copy:jquery": "cpx node_modules/jquery/dist/jquery.min.js dist/lib/jquery/",
