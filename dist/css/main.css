@@ -1,0 +1,19 @@
+fieldset{
+    border: 0;
+}
+
+.danger-level-blue {
+    color: deepskyblue;
+}
+
+.danger-level-yellow {
+    color: gold;
+}
+
+.danger-level-orange {
+    color: darkorange;
+}
+
+.danger-level-red {
+    color: red;
+}
