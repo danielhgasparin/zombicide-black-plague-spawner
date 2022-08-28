@@ -1,7 +1,7 @@
 function setButtonClick(){
     setGame(
-        $("#selectBaseNumberOfSurvivors").val(), 
-        $("#selectActualNumberOfSurvivors").val(), 
+        $("#selectBaseNumberOfSurvivors").val(),
+        $("#selectActualNumberOfSurvivors").val(),
         $("#checkboxZombieDeckBlackPlague").is(':checked'),
         $("#checkboxZombieDeckWulfsburg").is(':checked'),
         $("#checkboxZombieDeckNpc1").is(':checked'),

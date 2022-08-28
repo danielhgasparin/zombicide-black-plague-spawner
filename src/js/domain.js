@@ -7,11 +7,11 @@ let spawnZonesToUseList = [];
 let reachedLastSpawnZone;
 
 function setGame(
-    baseNumberOfSurvivorsToUse, 
-    actualNumberOfSurvivorsToUse, 
-    useBlackPlagueDeck, 
-    useWulfsburgDeck, 
-    useNpc1Deck, 
+    baseNumberOfSurvivorsToUse,
+    actualNumberOfSurvivorsToUse,
+    useBlackPlagueDeck,
+    useWulfsburgDeck,
+    useNpc1Deck,
     useNpc2Deck,
     useAblobinationDeck,
     useAbominatrollDeck,
@@ -126,9 +126,12 @@ function spawnZombies(numberOfSpawnZones){
                         }
                         break;
                     case SpawnTypeEnum.necromancerSpawn:
-                        remainingSpawns++;
-                        extraSpawns++;
-                        break;
+                        if (!$("#checkboxNecromancerInGame").is(':checked')) {
+                            $("#checkboxNecromancerInGame").prop("checked", true);
+                            remainingSpawns++;
+                            extraSpawns++;
+                            break;
+                        }
                 }
                 if(extraSpawns > 0){
                     //stay in the same spawn zone
