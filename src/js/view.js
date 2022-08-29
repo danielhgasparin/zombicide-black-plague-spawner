@@ -4,7 +4,7 @@ function setButtonClick(){
         $("#selectActualNumberOfSurvivors").val(),
         $("#checkboxZombieDeckBlackPlague").is(':checked'),
         $("#checkboxZombieDeckWulfsburg").is(':checked'),
-        $("#checkboxZombieDeckNpc1").is(':checked')
+        $("#checkboxZombieDeckNpc1").is(':checked'),
         $("#checkboxZombieDeckNpc2").is(':checked'),
         $("#checkboxZombieDeckAblobination").is(':checked'),
         $("#checkboxZombieDeckAbominatroll").is(':checked'),

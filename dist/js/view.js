@@ -39,6 +39,7 @@ function startNewGameButtonClick(){
         $("#divSpawnCards").hide();
         $("#buttonRollback").prop('disabled', true);
         $("#divSpawn").hide();
+        $("#checkboxNecromancerInGame").prop("checked", false);
     }
 }
 
